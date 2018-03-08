@@ -1,2 +1,10 @@
 <!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+
+<view>
+  <swiper>
+    <swiper-item>
+    
+    </swiper-item>
+  </swiper>
+  <view></view>
+</view>
