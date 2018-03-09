@@ -2,9 +2,7 @@
 
 <view>
   <swiper>
-    <swiper-item>
-    
-    </swiper-item>
+    <swiper-item></swiper-item>
   </swiper>
   <view></view>
 </view>

@@ -1,8 +1,11 @@
-import {Config} from config.js;
+// import {Config} from 'config.js';
 
 class Base{
-  constructor():{
+  constructor(){
 
   }
   
 }
+
+
+export {Base}
