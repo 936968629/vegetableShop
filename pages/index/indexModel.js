@@ -1,15 +1,17 @@
-class Index{
+import { Base } from '../../utils/base.js';
+class Index extends Base{
   constructor(){
-
+    super();
   }
-  getBannerData(id){
-    wx.request({
-      url: 'http://wenjunlin.xyz/api/v1/banner/'+id,
-      method:'get',
-      success:function(){
-
-      }
-    })
+  //获取swiper
+  getBannerData(id,callback){
+    var params = {
+      url:"banner/"+id,
+      sCallback: function (res) {
+        callback && callback(res.items);
+      },
+    }
+    this.request(params);
   }
 }
 export {Index}

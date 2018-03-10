@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -9,7 +9,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.7.2",
-	"appid": "wxc6a9b9793368b54e",
+	"appid": "wxbcc2f4b7e0a66be7",
 	"projectname": "bishe",
 	"condition": {
 		"search": {
