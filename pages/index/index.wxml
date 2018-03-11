@@ -1,8 +1,14 @@
 <!--pages/index/index.wxml-->
 
 <view>
-  <swiper>
-    <swiper-item></swiper-item>
+  <swiper autoplay='true' indicator-dots='true' class='swiper'>
+  <block wx:for="{{bannerData}}" wx:key="bannerData">
+    <swiper-item class="banner-item">
+      <image src="{{item.img}}"></image>
+    </swiper-item>
+  </block>
   </swiper>
-  <view></view>
+  <view class='home-main'>
+
+  </view>
 </view>

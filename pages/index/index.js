@@ -20,6 +20,9 @@ Page({
   _loadData:function(){
     index.getBannerData(1,(res)=>{
       console.log(res);
+      this.setData({
+        'bannerData':res
+      });
     })
   }
 
