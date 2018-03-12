@@ -9,6 +9,13 @@
   </block>
   </swiper>
   <view class='home-main'>
+    <view class='home-main-header'>最热商品</view>
+    <view>
+      <block wx:for="">
+        
+      </block>
+    </view>
 
+    <view class='home-main-header'>最新商品</view>
   </view>
 </view>
