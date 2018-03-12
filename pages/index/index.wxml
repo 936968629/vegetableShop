@@ -2,7 +2,7 @@
 
 <view>
   <view class='search-view'>
-  <input class="input" name="userName" placeholder="请输入用户名" 
+  <input class="input" name="userName" placeholder="请输入商品名" 
     bindinput="userNameInput" />
   <!-- <image class='search-img'></image> -->
   </view>
@@ -17,7 +17,7 @@
   <view class='home-main'>
     <view class='home-main-header'>最热商品</view>
     <view>
-      <block wx:for="">
+      <block>
 
       </block>
     </view>

@@ -15,11 +15,12 @@ Page({
    */
   onLoad: function (options) {
     this._loadData();
+    this._loadHotProduct();
   },
   //加载幻灯片
   _loadData:function(){
     index.getBannerData(1,(res)=>{
-      console.log(res);
+      // console.log(res);
       this.setData({
         'bannerData':res
       });
@@ -27,6 +28,15 @@ Page({
   },
   //加载最热商品
   _loadHotProduct:function(){
+    index.getHotData((res)=>{
+      console.log(res);
+      this.setData({
+        'hotData':res
+      });
+    });
+  },
+  //加载最新商品
+  _loadNewProduct:function(){
 
   },
 

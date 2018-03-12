@@ -13,5 +13,16 @@ class Index extends Base{
     }
     this.request(params);
   }
+  //获取最热商品
+  getHotData(callback){
+    var params = {
+      url:"product/hot",
+      sCallback:function(res){
+        callback && callback(res);
+      }
+    };
+    this.request(params);
+  }
+
 }
 export {Index}
