@@ -1,6 +1,12 @@
 <!--pages/index/index.wxml-->
 
 <view>
+  <view class='search-view'>
+  <input class="input" name="userName" placeholder="请输入用户名" 
+    bindinput="userNameInput" />
+  <!-- <image class='search-img'></image> -->
+  </view>
+ 
   <swiper autoplay='true' indicator-dots='true' class='swiper'>
   <block wx:for="{{bannerData}}" wx:key="bannerData">
     <swiper-item class="banner-item">
@@ -12,7 +18,7 @@
     <view class='home-main-header'>最热商品</view>
     <view>
       <block wx:for="">
-        
+
       </block>
     </view>
 

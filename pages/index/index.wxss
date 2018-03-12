@@ -1,5 +1,14 @@
 /* pages/index/index.wxss */
 @import "../tpls/base.wxss";
+.search-view{
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #8A8A8A;
+}
+.search-img{
+  width: 10px;
+  height: 10px;
+}
 
 .swiper{
   width: 100%;
