@@ -13,6 +13,16 @@ class Index extends Base{
     }
     this.request(params);
   }
+  //首页主题
+  getThemeData(callback) {
+    var params = {
+      url: 'theme?ids=1,2',
+      sCallback: function (res) {
+        callback && callback(res);
+      }
+    };
+    this.request(params);
+  }
   //获取最热商品
   getHotData(callback){
     var params = {

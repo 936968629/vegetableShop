@@ -24,8 +24,15 @@ Page({
       this.setData({
         'bannerData':res
       });
-    })
+    });
+    index.getThemeData((res)=>{
+      console.log(res);
+      this.setData({
+        'themeData':res
+      });
+    });
   },
+
   //加载最热商品
   _loadHotProduct:function(){
     index.getHotData((res)=>{

@@ -15,13 +15,12 @@
   </block>
   </swiper>
   <view class='home-main'>
-    <view class='home-main-header'>最热商品</view>
-    <view>
-      <block>
-
-      </block>
+    <view class='home-main-theme'>
+      <view class='home-main-header'>特色主题</view>
+      <view class='theme-box'></view>
     </view>
-
+   
+    <view class='home-main-header'>最热商品</view>
     <view class='home-main-header'>最新商品</view>
   </view>
 </view>
