@@ -17,7 +17,18 @@
   <view class='home-main'>
     <view class='home-main-theme'>
       <view class='home-main-header'>特色主题</view>
-      <view class='theme-box'></view>
+      <view class='theme-box'>
+        <block wx:for="{{themeData}}" wx:key="themeData">
+          <view wx:if="{{index==2}}" class="theme-item big" data-id="{{item.id}}" 
+          data-name="{{item.name}}" bindtap="onThemesItemTap">
+            <image src="{{item.img}}"></image>
+          </view>
+          <view wx:else class="theme-item" data-id="{{item.id}}" 
+          data-name="{{item.name}}" bindtap="onThemesItemTap">
+            <image src="{{item.img}}"></image>
+          </view>
+        </block>
+      </view>
     </view>
    
     <view class='home-main-header'>最热商品</view>
