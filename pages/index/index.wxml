@@ -3,8 +3,10 @@
 <view class='container'>
   <view class='search-view'>
     <view class='search-main'>
-      <input class="input" name="userName" placeholder="请输入商品名" 
+      <view class='search_input'>
+        <input class="input" name="userName" placeholder="请输入商品名" 
     bindinput="userNameInput" />
+      </view>
       <image class='search-img' src="../../imgs/search.png"></image>
     </view>
   </view>
