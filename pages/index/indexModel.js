@@ -33,6 +33,16 @@ class Index extends Base{
     };
     this.request(params);
   }
+  //获取最新商品
+  getNewData(callback){
+    var params = {
+      url:"product/recent",
+      sCallback:function(res){
+        callback && callback(res);
+      }
+    }
+    this.request(params);
+  }
 
 }
 export {Index}
