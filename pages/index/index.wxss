@@ -1,13 +1,28 @@
 /* pages/index/index.wxss */
 @import "../tpls/base.wxss";
+@import "../tpls/products/products-tpl.wxss";
 .search-view{
   width: 100%;
-  height: auto;
-  border-bottom: 1px solid #8A8A8A;
+  height: 60rpx;
+}
+.search-main{
+  display: flex;
+  flex-wrap:wrap;
+  align-content: space-between;
+  margin-left: 30%; 
+}
+.search_input{
+  border-bottom: 1px solid gray;
+}
+.search-main input{
+  width: 250rpx;
 }
 .search-img{
-  width: 10px;
-  height: 10px;
+  width: 40rpx;
+  height: 50rpx;
+  /* float: left; */
+   display: block; 
+  /* margin-left: 50rpx; */
 }
 
 .swiper{
@@ -76,4 +91,9 @@
 .theme-icon image{
   height: 48rpx;
   width: 48rpx;
+}
+
+.look_more{
+  font-size: 24rpx;
+  margin-left: auto;
 }

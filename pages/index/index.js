@@ -16,16 +16,24 @@ Page({
   onLoad: function (options) {
     this._loadData();
     this._loadHotProduct();
+    this._loadNewProduct();
   },
-  //加载幻灯片
+  //加载幻灯片...
   _loadData:function(){
     index.getBannerData(1,(res)=>{
-      // console.log(res);
+      console.log(res);
       this.setData({
         'bannerData':res
       });
-    })
+    });
+    index.getThemeData((res)=>{
+      console.log(res);
+      this.setData({
+        'themeData':res
+      });
+    });
   },
+
   //加载最热商品
   _loadHotProduct:function(){
     index.getHotData((res)=>{
