@@ -17,7 +17,7 @@
   <view class='home-main'>
     <view class='home-main-header'>最热商品</view>
     <view>
-      <block>
+      <block wx:for="{{hotData}}" >
 
       </block>
     </view>
