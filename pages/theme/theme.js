@@ -16,4 +16,9 @@ Page({
       var name = options.name;
       console.log(id+name); 
   },
+
+  //加载数据
+  _onload:function(){
+    
+  },
 })
