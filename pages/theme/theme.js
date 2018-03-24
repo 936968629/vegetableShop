@@ -1,4 +1,6 @@
 // pages/theme/theme.js
+import {Theme} from "themeModel.js";
+var theme = new Theme();
 Page({
 
   /**
@@ -15,10 +17,16 @@ Page({
       var id = options.id;
       var name = options.name;
       console.log(id+name); 
+      this._onload(id);
   },
 
   //加载数据
-  _onload:function(){
-    
+  _onload:function(id){
+    theme.getThemeData(id,(res)=>{
+      console.log(res);
+      this.setData({
+        'themeInfo':res
+      });
+    });
   },
 })
