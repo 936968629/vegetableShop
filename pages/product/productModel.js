@@ -10,6 +10,7 @@ class Product extends Base{
         callback && callback(res)
       }
     };
+    this.request(params);
   }
 }
 export {Product}

@@ -38,7 +38,7 @@
   </view>
   <view class="detail-bottom-box">
     <view class="tabs-box">
-      <block wx:for="{{['商品详情','商品参数','售后保障']}}">
+      <block wx:for="{{['商品详情','商品参数','售后保障']}}" wx:key="{{}}">
         <view class="tabs-item {{currentTabsIndex==index?'selected':''}}"
          bindtap="onTabsItemTap" 
         data-index="{{index}}">
@@ -48,12 +48,12 @@
     </view>
     <view class="product-detail-box">
       <view hidden="{{currentTabsIndex!=0}}" class="product-detail-imgs">
-        <block wx:for="{{product.imgs}}">
+        <block wx:for="{{product.imgs}}" wx:key="{{product.imgs}}">
           <image src="{{item.img_url.url}}"></image>
         </block>
       </view>
       <view hidden="{{currentTabsIndex!=1}}" class="product-detail-properties">
-        <block wx:for="{{product.property}}">
+        <block wx:for="{{product.property}}" wx:key="{{product.propert}}">
           <view class="properties-item">
             <view class="properties-name">{{item.name}}</view>
             <view class="properties-detail">{{item.detail}}</view>
