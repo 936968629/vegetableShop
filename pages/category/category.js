@@ -1,18 +1,20 @@
 // pages/category/category.js
+import {Category} from 'categoryModel.js';
+var category = new Category();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    category_id:1
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this._loadData();
   },
 
   /**
@@ -22,45 +24,31 @@ Page({
   
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
+  _loadData:function(){
+    category.getCategoryInfo((data)=>{
+      console.log(data);
+      this.setData({
+        "categoryTypeArr":data
+      });
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
+      category.getProductsByCategory(data[0].id, (productdata) => {
+        var dataObj = {
+          products: productdata,
+          topImgUrl: data[0].img.url,
+          title: data[0].name,
+        }
+        // console.log(dataObj);
+        this.setData({
+          'categoryProducts': dataObj
+        });
+        //保存数据
+        this.data.loadedData[0] = dataObj;
+      });
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
+    });
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
   }
+ 
 })

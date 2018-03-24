@@ -8,6 +8,7 @@ Page({
    */
   data: {
     productCount:1,
+    currentTabsIndex:0,
     countsArr:[1,2,3,4,5,6,7,8,9,10]
   },
 
@@ -39,8 +40,14 @@ Page({
     this.setData({
       'productCount': selectedCount,
     });
+  },
+  //tab选项卡切换
+  onTabsItemTap:function(event){
+    var index = product.getDataSet(event,'index');
+    this.setData({
+      'currentTabsIndex':index
+    });
   }
- 
 
 
 })
