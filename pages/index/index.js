@@ -60,9 +60,12 @@ Page({
       url: '../product/product?id=' + id,
     });
   },
+  onThemesItemTap:function(event){
+    var id = index.getDataSet(event, 'id');
+    
+  },
   onPullDownRefresh:function(){
     // wx.stopPullDownRefresh();
-    console.log(1);
     wx.showToast({
 
       title: '没事儿别乱拉',//提示信息

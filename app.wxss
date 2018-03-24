@@ -1,0 +1,9 @@
+.container {
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: #fffffc;
+  font-family: "Microsoft Yahei";
+}
