@@ -1,4 +1,6 @@
 // pages/product/product.js
+import {Product} from "productModel.js";
+var product = new Product();
 Page({
 
   /**
@@ -13,11 +15,16 @@ Page({
    */
   onLoad: function (options) {
       var id = options.id;
+      this._loadData(id);
   },
 
+  onReady:function(){
 
+  },
 
+  _loadData:function(id){
 
+  }
  
 
 

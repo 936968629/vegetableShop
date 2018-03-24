@@ -16,8 +16,15 @@ Page({
   onLoad: function (options) {
       var id = options.id;
       var name = options.name;
-      console.log(id+name); 
+      this.data.name = name;
+      
       this._onload(id);
+  },
+
+  onReady:function(){
+    wx.setNavigationBarTitle({
+      title: this.data.name,
+    })
   },
 
   //加载数据
@@ -27,6 +34,14 @@ Page({
       this.setData({
         'themeInfo':res
       });
+    });
+  },
+  //商品点击事件
+  onProductsItemTap: function (event) {
+    // console.log(event);
+    var id = theme.getDataSet(event, 'id');
+    wx.navigateTo({
+      url: '../product/product?id=' + id,
     });
   },
 })

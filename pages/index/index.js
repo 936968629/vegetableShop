@@ -78,5 +78,10 @@ Page({
       duration: 1000//时间
 
     })
+  },
+  onReady:function(){
+    wx.setNavigationBarTitle({
+      title: 'aa',
+    });
   }
 })
