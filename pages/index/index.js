@@ -62,7 +62,10 @@ Page({
   },
   onThemesItemTap:function(event){
     var id = index.getDataSet(event, 'id');
-    
+    var name = index.getDataSet(event,'name');
+    wx.navigateTo({
+      url: '../theme/theme?id='+id+'&name='+name,
+    })
   },
   onPullDownRefresh:function(){
     // wx.stopPullDownRefresh();
