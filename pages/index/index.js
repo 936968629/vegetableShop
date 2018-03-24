@@ -52,7 +52,14 @@ Page({
       });
     });
   },
-
+  //轮播\新品点击事件
+  onProductsItemTap: function (event) {
+    // console.log(event);
+    var id = index.getDataSet(event, 'id');
+    wx.navigateTo({
+      url: '../product/product?id=' + id,
+    });
+  },
   onPullDownRefresh:function(){
     // wx.stopPullDownRefresh();
     console.log(1);

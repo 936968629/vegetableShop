@@ -1,12 +1,13 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/product/product"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "aa",
     "navigationBarTextStyle": "black",
-    "enablePullDownRefresh":true
+    "enablePullDownRefresh": true
   }
 }
