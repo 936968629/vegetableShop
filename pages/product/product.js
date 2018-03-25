@@ -47,7 +47,10 @@ Page({
     this.setData({
       'currentTabsIndex':index
     });
-  }
+  },
+  //加入购物车
+  onAddingToCard:function(){
 
+  }
 
 })

@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    category_id:1
+    category_id:1,
+    loadedData: {},//保存数据
   },
 
   /**
@@ -34,10 +35,10 @@ Page({
       category.getProductsByCategory(data[0].id, (productdata) => {
         var dataObj = {
           products: productdata,
-          topImgUrl: data[0].img.url,
+          topImgUrl: data[0].topic_imgl,
           title: data[0].name,
         }
-        // console.log(dataObj);
+        console.log(dataObj);
         this.setData({
           'categoryProducts': dataObj
         });
@@ -46,9 +47,45 @@ Page({
       });
 
     });
+  },
 
+  onProductsItemTap:function(){
 
+  },
+  //分类点击
+  categoryClick: function (event) {
+    // console.log(event);
+    var id = category.getDataSet(event, 'id');
+    var index = category.getDataSet(event, 'index');
+    this.setData({
+      'category_id': id,
+    });
+    if (!this.isLoadedData(index)) {
+      category.getProductsByCategory(id, (productdata) => {
+        var dataObj = {
+          products: productdata,
+          topImgUrl: this.data.categoryTypeArr[index].topic_img,
+          title: this.data.categoryTypeArr[index].name,
+        }
+        this.setData({
+          'categoryProducts': dataObj
+        });
+        //保存数据
+        this.data.loadedData[index] = dataObj;
+      });
+    }
+    else {
+      this.setData({
+        'categoryProducts': this.data.loadedData[index],
+      });
+    }
 
-  }
- 
+  },
+  //判断当前分类下的商品是否被加载
+  isLoadedData: function (index) {
+    if (this.data.loadedData[index]) {
+      return true;
+    }
+    return false;
+  },
 })

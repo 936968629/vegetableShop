@@ -13,7 +13,13 @@ class Category extends Base{
     this.request(params);
   }
   getProductsByCategory(id,callback){
-    
+    var params = {
+      url: 'product/by_category?id=' + id,
+      sCallback: function (productdata) {
+        callback && callback(productdata);
+      }
+    };
+    this.request(params);
   }
 }
 export {Category}

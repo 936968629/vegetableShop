@@ -1,2 +1,60 @@
 <!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+<!-- <text>pages/cart/cart.wxml</text> -->
+<view class="container cart-container">
+  <block wx:if="{{cartData.length>0}}">
+    <view class="cart-box">
+      <block wx:for="{{cartData}}">
+        <view class="cart-item">
+          <view class="cart-item-main">
+            <view class="cart-item-checkbox" bindtap="toggleSelect" 
+            data-id="{{item.id}}" data-status="{{item.selectStatus}}">
+              <image wx:if="{{item.selectStatus}}" src="../../imgs/icon/circle@selected.png"></image>
+              <image wx:else src="../../imgs/icon/circle@noselected.png"></image>
+            </view>
+
+            <view class="cart-item-img">
+              <image class="good-img" src="{{item.main_img_url}}"></image>
+            </view>
+
+            <view class="cart-item-word">
+              <view class="title-box">
+                <text class="title">{{item.name}}</text>
+                <text>${{item.price}}</text>
+              </view>
+              <view class="bottom-box">
+                <view class="cart-item-counts">
+                  <view bindtap="changeCounts" data-id="{{item.id}}"
+                  data-type="delete" class="btns {{item.counts==1?'disabled':''}}">-</view>
+                  <view class="counts">{{item.counts}}</view>
+                  <view bindtap="changeCounts" data-id="{{item.id}}"
+                  data-type="add" class="btns">+</view>
+                </view>
+                <view class="delete" bindtap="delete" data-id="{{item.id}}">×</view>
+              </view>
+            </view>
+            
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="footer-account-box all-accounts-box">
+      <view class="all-select" bindtap="toggleSelectAll" data-status="{{selectedTypeCounts==cartData.length?'true':'false'}}">
+          <image wx:if="{{selectedTypeCounts==cartData.length}}" class="title-icon" src="../../imgs/icon/all@selected.png"></image>
+          <image wx:else class="title-icon" src="../../imgs/icon/all.png"></image>
+
+          <text>全选({{selectedCount}})</text>
+        </view>
+        <view class="all-price-submit {{account==0?'disabled':''}}" bindtap="submitOrder">
+          <view class="accounts-btn">下单</view>
+          <view class="price-text">￥{{account}}</view>
+          <view class="arrow-icon">
+            <image wx:if="{{account==0}}" src="../../imgs/icon/arrow@grey.png"></image>
+            <image wx:else src="../../imgs/icon/arrow.png"></image>
+          </view>
+        </view>
+    </view>
+  </block>
+  <view wx:else class="no-data">
+    您还没添加任何商品
+  </view>
+</view>
