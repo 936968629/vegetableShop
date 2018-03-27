@@ -46,7 +46,7 @@
                 </view>
             </view>
         </block>
-        <view class='look_more'>查看更多></view>
+        <view class='look_more' bindtap='morehot'>查看更多></view>
       </view>
       <view class='home-main-header'>最新商品</view>
       <view class="products-box">
