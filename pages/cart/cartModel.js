@@ -2,6 +2,7 @@ import {Base} from "../../utils/base.js";
 class Cart extends Base{
   constructor(){
     super();
+    this._storageKeyName = 'cart';
   }
   //添加购物车
   //如果之前没有该商品则添加新的记录
@@ -52,4 +53,4 @@ class Cart extends Base{
     return result;
   }
 }
-export {Card}
+export {Cart}

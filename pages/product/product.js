@@ -1,6 +1,8 @@
 // pages/product/product.js
 import {Product} from "productModel.js";
+import {Cart} from "../cart/cartModel.js";
 var product = new Product();
+var cart = new Cart();
 Page({
 
   /**
@@ -50,7 +52,17 @@ Page({
   },
   //加入购物车
   onAddingToCard:function(){
+    this.addToCard();
 
-  }
-
+  },
+  addToCard: function () {
+    var tempObj = {};
+    var keys = ['id', 'name', 'main_img_url', 'price'];
+    for (var key in this.data.product) {
+      if (keys.indexOf(key) >= 0) {
+        tempObj[key] = this.data.product[key];
+      }
+    }
+    cart.add(tempObj, this.data.productCount);
+  },
 })
