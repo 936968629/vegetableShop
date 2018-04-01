@@ -53,7 +53,10 @@ Page({
   //加入购物车
   onAddingToCard:function(){
     this.addToCard();
-
+    //即时修改购物车数量
+    this.setData({
+      'cartTotalCounts': cart.getCartTotalCounts(),
+    });
   },
   addToCard: function () {
     var tempObj = {};

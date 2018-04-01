@@ -52,5 +52,50 @@ class Cart extends Base{
     }
     return result;
   }
+  //购物车商品数量
+  //@flag true考虑商品是否选择 false返回所有商品总和
+  getCartTotalCounts(flag) {
+    var data = this.getCartDataFromLocal();
+    var counts = 0;
+    for (let i = 0; i < data.length; i++) {
+      if (flag) {
+        if (data[i].selectStatus) {
+          counts += data[i].counts;
+        }
+      } else {
+        counts += data[i].counts;
+      }
+
+    }
+    return counts;
+  }
+  //修改购物车商品数量
+  //@id 商品id
+  //@counts 修改数量
+  _changeCartCounts(id, counts) {
+    var cartData = this.getCartDataFromLocal(),
+      hasInfo = this._isHasThaOne(id, cartData);
+    if (hasInfo.index != -1) {
+      if (hasInfo.data.counts > 1) {
+        cartData[hasInfo.index].counts += counts;
+      }
+    }
+    wx.setStorageSync(this._storageKeyName, cartData);
+  }
+  addCounts(id) {
+    this._changeCartCounts(id, 1);
+  }
+  deleteCounts(id) {
+    this._changeCartCounts(id, -1);
+  }
+  //删除
+  delete(id) {
+    var cartData = this.getCartDataFromLocal();
+    var hasInfo = this._isHasThaOne(id, cartData);
+    if (hasInfo.index != -1) {
+      cartData.splice(hasInfo.index, 1);
+    }
+    wx.setStorageSync(this._storageKeyName, cartData);
+  }
 }
 export {Cart}

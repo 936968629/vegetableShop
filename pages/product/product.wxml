@@ -30,7 +30,7 @@
       </view>
     </view>
     <view class="basic-info-box">
-      <view class="stock" wx:if="{{product.stock>0}}">有货</view>
+      <view class="stock" wx:if="{{product.stock>0}}"></view>
       <view class="stock no" wx:else>缺货</view>
       <view class="name">{{product.name}}</view>
       <view class="price">${{product.price}}</view>
