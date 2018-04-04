@@ -1,4 +1,6 @@
 // pages/more/more.js
+import {More} from "./moreModel.js";
+var more = new More();
 Page({
 
   /**
@@ -13,9 +15,9 @@ Page({
    */
   onLoad: function (options) {
     var type = options.type;
-
+    this._loadData(type);
   },
-  _loadData:function(){
+  _loadData:function(type){
 
   },
 
