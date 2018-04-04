@@ -67,6 +67,12 @@ Page({
       url: '../theme/theme?id='+id+'&name='+name,
     })
   },
+  more:function(event){
+    var type = index.getDataSet(event,'type');
+    wx.navigateTo({
+      url: '../more/more?type='+type,
+    });
+  },
   onPullDownRefresh:function(){
     // wx.stopPullDownRefresh();
     wx.showToast({
