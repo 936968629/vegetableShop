@@ -17,6 +17,7 @@ Page({
     var type = options.type;
     this._loadData(type);
   },
+  
   _loadData:function(type){
 
   },
