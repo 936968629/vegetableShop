@@ -3,11 +3,14 @@ class More extends Base{
   constructor(){
     super();
   }
-  getData(type,callback){
+  getData(type,page,callback){
     var params = {
-
+      url:'product/more/'+type+'?page='+page,
+      sCallback: function (res) {
+        callback && callback(res.items);
+      },
     };
-    this.request();
+    this.request(params);
   }
 
 }
