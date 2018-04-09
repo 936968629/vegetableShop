@@ -1,1 +1,3 @@
 /* pages/more/more.wxss */
+@import "../tpls/base.wxss";
+@import "../tpls/products/products-tpl.wxss";
