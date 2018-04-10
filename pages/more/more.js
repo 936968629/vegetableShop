@@ -15,18 +15,29 @@ Page({
    */
   onLoad: function (options) {
     var type = options.type;
+    if(type === 'hot'){
+      type = '最热商品';
+    }else if(type === 'new'){
+      type = '最新商品';
+    }else if(type === 'all'){
+      type = '所有商品';
+    }else{
+      type = '商品查找';
+    }
+    wx.setNavigationBarTitle({
+      title: type,
+    });
     this._loadData(type);
   },
-  
+
   _loadData:function(type){
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
+    var page = 1;
+    more.getData(type,page,(res)=>{
+      console.log(res);
+      this.setData({
+        'allProducts':res
+      });
+    });
   },
 
   /**

@@ -7,7 +7,7 @@ class More extends Base{
     var params = {
       url:'product/more/'+type+'?page='+page,
       sCallback: function (res) {
-        callback && callback(res.items);
+        callback && callback(res);
       },
     };
     this.request(params);

@@ -73,18 +73,18 @@ Page({
       url: '../more/more?type='+type,
     });
   },
-  onPullDownRefresh:function(){
-    // wx.stopPullDownRefresh();
-    wx.showToast({
+  // onPullDownRefresh:function(){
+  //   // wx.stopPullDownRefresh();
+  //   wx.showToast({
 
-      title: '没事儿别乱拉',//提示信息
+  //     title: '没事儿别乱拉',//提示信息
 
-      icon: 'success',//成功显示图标
+  //     icon: 'success',//成功显示图标
 
-      duration: 1000//时间
+  //     duration: 1000//时间
 
-    })
-  },
+  //   })
+  // },
   onReady:function(){
     wx.setNavigationBarTitle({
       title: 'aa',
