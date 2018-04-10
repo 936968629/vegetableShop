@@ -4,10 +4,10 @@
   <view class='search-view'>
     <view class='search-main'>
       <view class='search_input'>
-        <input class="input" name="userName" placeholder="请输入商品名" 
-    bindinput="userNameInput" />
+        <input class="input" name="name" placeholder="请输入商品名" 
+    bindinput="userNameInput" bindinput='listenerNameInput' />
       </view>
-      <image class='search-img' src="../../imgs/search.png" bindtap='more'></image>
+      <image class='search-img' src="../../imgs/search.png" bindtap='more' data-type='search'></image>
     </view>
   </view>
  

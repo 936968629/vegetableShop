@@ -15,6 +15,8 @@ Page({
    */
   onLoad: function (options) {
     var type = options.type;
+    var name = options.name;
+    console.log(name)
     if(type === 'hot'){
       type = '最热商品';
     }else if(type === 'new'){

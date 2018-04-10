@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    name:''
   },
 
   /**
@@ -69,8 +69,17 @@ Page({
   },
   more:function(event){
     var type = index.getDataSet(event,'type');
+    var url = '../more/more?type=' + type;
+    if(type === 'search'){
+      url += '&name='+this.name
+    }
     wx.navigateTo({
-      url: '../more/more?type='+type,
+      url: url,
+    });
+  },
+  listenerNameInput:function(e){
+    this.setData({
+      'name':e.detail.value
     });
   },
   // onPullDownRefresh:function(){
