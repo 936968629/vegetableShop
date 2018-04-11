@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    keyword:'',
   },
 
   /**
@@ -15,8 +15,14 @@ Page({
    */
   onLoad: function (options) {
     var type = options.type;
-    var name = options.name;
-    console.log(name)
+    var keyword = options.name;
+    if (typeof (keyword) === "undefined"){
+      keyword = '';
+    }
+    this.setData({
+      'keyword':keyword
+    })
+
     if(type === 'hot'){
       type = '最热商品';
     }else if(type === 'new'){
@@ -29,13 +35,14 @@ Page({
     wx.setNavigationBarTitle({
       title: type,
     });
-    this._loadData(type);
+    this._loadData(type,keyword);
   },
 
-  _loadData:function(type){
+  _loadData:function(type,keyword){
     var page = 1;
-    more.getData(type,page,(res)=>{
+    more.getData(type,keyword,page,(res)=>{
       console.log(res);
+      if (res.hasOwnProperty('error_code') === true )
       this.setData({
         'allProducts':res
       });
@@ -46,7 +53,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+      console.log(1);
   },
 
 })

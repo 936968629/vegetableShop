@@ -69,9 +69,12 @@ Page({
   },
   more:function(event){
     var type = index.getDataSet(event,'type');
+    var keyword = this.data.name;
     var url = '../more/more?type=' + type;
     if(type === 'search'){
-      url += '&name='+this.name
+      if (keyword !== '') {
+        url += '&name=' + keyword;
+      }
     }
     wx.navigateTo({
       url: url,

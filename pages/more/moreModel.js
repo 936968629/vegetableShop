@@ -3,9 +3,9 @@ class More extends Base{
   constructor(){
     super();
   }
-  getData(type,page,callback){
+  getData(type,keyword,page,callback){
     var params = {
-      url:'product/more/'+type+'?page='+page,
+      url:'product/more/'+type+'?page='+page+'&keyword='+keyword,
       sCallback: function (res) {
         callback && callback(res);
       },
