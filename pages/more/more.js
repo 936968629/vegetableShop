@@ -42,13 +42,13 @@ Page({
     var page = 1;
     more.getData(type,keyword,page,(res)=>{
       console.log(res);
-      // if (res.hasOwnProperty('error_code') === true ){
-        
-      // }else{
-      //   this.setData({
-      //     'allProducts': res
-      //   });
-      // }
+      if (res.hasOwnProperty('error_code') === true ){
+        console.log("das")
+      }else{
+        this.setData({
+          'allProducts': res
+        });
+      }
     });
   },
 
