@@ -41,7 +41,7 @@ class Base{
           if (flag) {
             params.eCallback && params.eCallback(res.data);
           }
-          if(code == '404' && res.error_code == 10002){//没有数据了
+          if(code == '404' && res.data.error_code == 10002){//没有数据了
             params.sCallback && params.sCallback(res.data);
           }
         }
