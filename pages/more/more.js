@@ -8,6 +8,7 @@ Page({
    */
   data: {
     keyword:'',
+    showMore:false,
   },
 
   /**
@@ -43,7 +44,10 @@ Page({
     more.getData(type,keyword,page,(res)=>{
       console.log(res);
       if (res.hasOwnProperty('error_code') === true ){
-        console.log("das")
+        //没有数据
+        this.setData({
+          'showMore':true
+        })
       }else{
         this.setData({
           'allProducts': res
