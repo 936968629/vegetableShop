@@ -9,6 +9,8 @@ Page({
   data: {
     keyword:'',
     showMore:false,
+    page:1,
+    type:''
   },
 
   /**
@@ -17,30 +19,31 @@ Page({
   onLoad: function (options) {
     var type = options.type;
     var keyword = options.name;
+    var atype = '';
     if (typeof (keyword) === "undefined"){
       keyword = '';
     }
-    this.setData({
-      'keyword':keyword
-    })
-
+    
     if(type === 'hot'){
-      type = '最热商品';
+      atype = '最热商品';
     }else if(type === 'new'){
-      type = '最新商品';
+      atype = '最新商品';
     }else if(type === 'all'){
-      type = '所有商品';
+      atype = '所有商品';
     }else{
-      type = '商品查找';
+      atype = '商品查找';
     }
+    this.setData({
+      'keyword': keyword,
+      'type':type
+    })
     wx.setNavigationBarTitle({
-      title: type,
+      title: atype,
     });
-    this._loadData(type,keyword);
+    this._loadData(type,keyword,1);
   },
 
-  _loadData:function(type,keyword){
-    var page = 1;
+  _loadData:function(type,keyword,page){
     more.getData(type,keyword,page,(res)=>{
       console.log(res);
       if (res.hasOwnProperty('error_code') === true ){
@@ -60,7 +63,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-      console.log(1);
+    console.log(1)
+    var page = this.data.page;
+    page++;
+    this.setData({
+      'page':page,
+    });
+    this._loadData(type, keyword, page);
   },
 
 })
