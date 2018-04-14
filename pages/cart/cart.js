@@ -16,6 +16,10 @@ Page({
   onLoad: function (options) {
 
   },
+  //离开页面是保存数据到缓存
+  onHide:function(){
+    wx.setStorageSync('cart', this.data.cartData)
+  },
 
   /**
   * 生命周期函数--监听页面显示
@@ -123,4 +127,10 @@ Page({
       'account': newData.account
     });
   },
+  //去支付
+  submitOrder:function(event){
+    wx.navigateTo({
+      url: '../order/order?account='+this.data.account+'&from=cart',
+    })
+  }
 })

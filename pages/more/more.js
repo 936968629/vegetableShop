@@ -71,5 +71,12 @@ Page({
     });
     this._loadData(type, keyword, page);
   },
-
+  //商品点击事件
+  onProductsItemTap: function (event) {
+    // console.log(event);
+    var id = more.getDataSet(event, 'id');
+    wx.navigateTo({
+      url: '../product/product?id=' + id,
+    });
+  },
 })

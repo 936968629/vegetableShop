@@ -68,4 +68,10 @@ Page({
     }
     cart.add(tempObj, this.data.productCount);
   },
+  //跳到购物车页面
+  ToCart:function(e){
+    wx.switchTab({
+      url: '/pages/cart/cart',
+    })
+  }
 })

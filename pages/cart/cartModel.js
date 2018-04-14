@@ -23,11 +23,20 @@ class Cart extends Base{
     //更新缓存
     wx.setStorageSync(this._storageKeyName, cartData);
   }
-  //从缓存读取购物车数据
-  getCartDataFromLocal() {
+  //从缓存读取购物车数据 flag:true过滤未选择的商品
+  getCartDataFromLocal(flag) {
     var res = wx.getStorageSync(this._storageKeyName);
     if (!res) {
       res = [];
+    }
+    if(flag){
+      var newRes = [];
+      for(let i=0;i<res.length;i++){
+        if(res[i].selectStatus){
+          newRes.push(res[i]);
+        }
+      }
+      res = newRes;
     }
     return res;
   }
