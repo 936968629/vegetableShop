@@ -45,11 +45,11 @@ Page({
         };
         that._bindAddress(addressInfo);
 
-        // address.submitAddress(res, (flag) => {
-        //   if (!flag) {
-        //     that.showTips('操作提示', '地址信息更新失败');
-        //   }
-        // });
+        address.submitAddress(res, (flag) => {
+          if (!flag) {
+            that.showTips('操作提示', '地址信息更新失败');
+          }
+        });
       }
     });
   },
@@ -60,4 +60,29 @@ Page({
     });
   },
 
+
+
+
+  /*
+  * 提示窗口
+  * params:
+  * title - {string}标题
+  * content - {string}内容
+  * flag - {bool}是否跳转到 "我的页面"
+  */
+  showTips: function (title, content, flag) {
+    wx.showModal({
+      title: title,
+      content: content,
+      showCancel: false,
+      success: function (res) {
+        if (flag) {
+          wx.switchTab({
+            url: '/pages/my/my'
+          });
+        }
+      }
+    });
+  },
+  
 })

@@ -1,5 +1,5 @@
 // import {Config} from 'config.js';
-
+import {Token} from "./token.js";
 class Base{
   constructor(){
     this.baseRequestUrl = "https://www.wenjunlin.xyz/api/v1/";
@@ -31,7 +31,7 @@ class Base{
           //效果同上
           params.sCallback && params.sCallback(res.data);
         } else {
-          if (code == '401') {
+          if (code == '401') {//令牌失效
             //获取token 再次获取token
             //再次调用Base request
             if (!flag) {
@@ -65,6 +65,5 @@ class Base{
   }
 
 }
-
 
 export {Base}
