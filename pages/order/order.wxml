@@ -51,7 +51,7 @@
 
   <!--列表-->
   <view class="order-main">
-    <block wx:for="{{productsArr}}">
+    <block wx:for="{{productsArr}}" wx:key="{{productsArr}}">
       <view class="product-item">
         <view class="item-left">
           <image src="{{item.main_img_url}}"></image>
