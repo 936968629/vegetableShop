@@ -45,7 +45,7 @@ class Order extends Base{
             'nonceStr': data.nonceStr,
             'package': data.package,
             'signType': data.signType,
-            'paySign': data.paySign,
+            'paySign': data.pay_sign,
             success: function () {
               callback && callback(2);
             },
