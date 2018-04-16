@@ -14,3 +14,15 @@
 .hide{
   display: none
 }
+.loading{
+  padding: 10rpx;  
+  text-align: center;  
+}
+.loading image{  
+  margin-right: 5rpx;  
+  vertical-align: middle;  
+  content: '';  
+  width: 40rpx;  
+  height: 40rpx;  
+  animation: rotate 1s linear infinite;  
+}
