@@ -10,7 +10,8 @@ Page({
     keyword:'',
     showMore:false,
     page:1,
-    type:''
+    type:'',
+    allProducts:[],
   },
 
   /**
@@ -45,15 +46,16 @@ Page({
 
   _loadData:function(type,keyword,page){
     more.getData(type,keyword,page,(res)=>{
-      console.log(res);
+      // console.log(res);
       if (res.hasOwnProperty('error_code') === true ){
         //没有数据
         this.setData({
           'showMore':true
         })
       }else{
+        var allProducts = this.data.allProducts.concat(res);
         this.setData({
-          'allProducts': res
+          'allProducts': allProducts
         });
       }
     });
@@ -69,7 +71,7 @@ Page({
     this.setData({
       'page':page,
     });
-    this._loadData(type, keyword, page);
+    this._loadData(this.data.type,this.data.keyword, page);
   },
   //商品点击事件
   onProductsItemTap: function (event) {

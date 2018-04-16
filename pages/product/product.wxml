@@ -49,7 +49,7 @@
     <view class="product-detail-box">
       <view hidden="{{currentTabsIndex!=0}}" class="product-detail-imgs">
         <block wx:for="{{product.imgs}}" wx:key="{{product.imgs}}">
-          <image src="{{item.img_url.url}}"></image>
+          <image src="{{item.img}}" class='product-infoImg'></image>
         </block>
       </view>
       <view hidden="{{currentTabsIndex!=1}}" class="product-detail-properties">
