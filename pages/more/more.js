@@ -12,6 +12,9 @@ Page({
     page:1,
     type:'',
     allProducts:[],
+    showloading:false,
+    animation:{},
+    myTimer:''
   },
 
   /**
@@ -50,12 +53,14 @@ Page({
       if (res.hasOwnProperty('error_code') === true ){
         //没有数据
         this.setData({
-          'showMore':true
+          'showMore':true,
+          'showloading': false
         })
       }else{
         var allProducts = this.data.allProducts.concat(res);
         this.setData({
-          'allProducts': allProducts
+          'allProducts': allProducts,
+          'showloading':true
         });
       }
     });
@@ -65,20 +70,50 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log(1)
+    if (this.data.showMore){
+      return false;
+    }
+    var that = this;
+    this.setData({
+      showloading:true
+    });
+    var animation = wx.createAnimation({
+      duration: 1000,
+      timingFunction: 'linear',
+    });
+    this.animation = animation;
+    animation.rotate(180).step()
+    this.rotateImg(this.animation);
+    var n = 1;
+    var myTimer = setInterval(function(){
+      n++;
+      animation.rotate(180 * (n) ).step()
+      that.setData({
+        animation: animation.export()
+      });
+    },1000);
     var page = this.data.page;
     page++;
     this.setData({
       'page':page,
+      'myTimer': myTimer
     });
-    this._loadData(this.data.type,this.data.keyword, page);
+    setTimeout(function(){
+      that._loadData(that.data.type, that.data.keyword, page);
+    },2000);
+    
   },
   //商品点击事件
   onProductsItemTap: function (event) {
-    // console.log(event);
     var id = more.getDataSet(event, 'id');
     wx.navigateTo({
       url: '../product/product?id=' + id,
     });
   },
+  //图片旋转
+  rotateImg: function (animation){
+    this.setData({
+      animation: animation.export()
+    })
+  }
 })

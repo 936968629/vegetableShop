@@ -8,7 +8,9 @@
       <block wx:if="{{showMore}}">
         <view class='show'>没有多余的商品了</view>
       </block>
-      <view class="loading" ><image class='' src='../../imgs/about/loading.jpg'></image>正在载入更多...</view>  
+      <block wx:if="{{showloading}}">
+        <view class="loading"><image class='' src='../../imgs/about/loading.jpg' animation="{{animation}}"></image>正在载入更多...</view>
+      </block>
     </view>
   </view>
 </view>

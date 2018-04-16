@@ -15,14 +15,19 @@
   display: none
 }
 .loading{
-  padding: 10rpx;  
-  text-align: center;  
+  display: flex;
+  height: 60rpx;
+  color: #8A8A8A;
+  background-color: #fff;
+  font-size: 32rpx;
+  align-items: center;
+  justify-content: center;
+  margin: 20rpx 0;
 }
 .loading image{  
   margin-right: 5rpx;  
   vertical-align: middle;  
   content: '';  
-  width: 40rpx;  
-  height: 40rpx;  
-  animation: rotate 1s linear infinite;  
+  width: 34rpx;  
+  height: 34rpx;  
 }
