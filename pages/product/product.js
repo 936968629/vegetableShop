@@ -3,6 +3,7 @@ import {Product} from "productModel.js";
 import {Cart} from "../cart/cartModel.js";
 var product = new Product();
 var cart = new Cart();
+var app = getApp()
 Page({
 
   /**
@@ -51,7 +52,19 @@ Page({
     });
   },
   //加入购物车
-  onAddingToCard:function(){
+  onAddingToCard:function(e){
+    //动画效果
+    this.finger = {}; var topPoint = {};
+    this.finger['x'] = e.touches["0"].clientX;
+    this.finger['y'] = e.touches["0"].clientY;
+
+    console.log(this.finger)
+    console.log('ww:' + app.globalData.ww + 'hh:' + app.globalData.hh)
+    topPoint = this.gettTopPoint();
+    console.log(topPoint)
+    this.linePos = app.bezier([this.finger, topPoint], 30);
+    console.log(this.linePos)
+    this.startAnimation();
     this.addToCard();
     //即时修改购物车数量
     this.setData({
@@ -73,5 +86,48 @@ Page({
     wx.switchTab({
       url: '/pages/cart/cart',
     })
+  },
+  startAnimation: function () {
+    var index = 0, that = this,
+      bezier_points = that.linePos['bezier_points'];
+    this.setData({
+      hide_good_box: false,
+      bus_x: that.finger['x'],
+      bus_y: that.finger['y']
+    })
+    this.timer = setInterval(function () {
+      index++;
+      that.setData({
+        bus_x: bezier_points[index]['x'],
+        bus_y: bezier_points[index]['y']
+      })
+      if (index >= 28) {
+        clearInterval(that.timer);
+        that.setData({
+          hide_good_box: true,
+          hideCount: false,
+          count: that.data.count += 1
+        })
+      }
+    }, 33);
+  },
+  //获取停止动画坐标
+  gettTopPoint:function(){
+    var ww = app.globalData.ww;
+    var hh = app.globalData.hh;
+    var topPoint = {};
+    topPoint['x'] = ww - 38;
+    topPoint['y'] = 18;
+    // if(ww > 400){
+    //   topPoint['x'] = ww-38;
+    //   topPoint['y'] = 18;
+    // }else if(ww <= 400 && ww>370){
+    //   topPoint['x'] = ww - 38;
+    //   topPoint['y'] = 18;
+    // }else if(ww <= 370){
+    //   topPoint['x'] = ww-38;
+    //   topPoint['y'] = 18;
+    // }
+    return topPoint;
   }
 })
