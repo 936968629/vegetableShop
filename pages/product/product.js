@@ -3,7 +3,7 @@ import {Product} from "productModel.js";
 import {Cart} from "../cart/cartModel.js";
 var product = new Product();
 var cart = new Cart();
-var app = getApp()
+var app = getApp();
 Page({
 
   /**
@@ -57,13 +57,10 @@ Page({
     this.finger = {}; var topPoint = {};
     this.finger['x'] = e.touches["0"].clientX;
     this.finger['y'] = e.touches["0"].clientY;
-
-    console.log(this.finger)
-    console.log('ww:' + app.globalData.ww + 'hh:' + app.globalData.hh)
     topPoint = this.gettTopPoint();
-    console.log(topPoint)
+
     this.linePos = app.bezier([this.finger, topPoint], 30);
-    console.log(this.linePos)
+
     this.startAnimation();
     this.addToCard();
     //即时修改购物车数量
