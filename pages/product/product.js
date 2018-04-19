@@ -12,7 +12,8 @@ Page({
   data: {
     productCount:1,
     currentTabsIndex:0,
-    countsArr:[1,2,3,4,5,6,7,8,9,10]
+    countsArr:[1,2,3,4,5,6,7,8,9,10],
+    hide_good_box:true
   },
 
   /**
@@ -65,10 +66,13 @@ Page({
 
     this.startAnimation();
     this.addToCard();
-    //即时修改购物车数量
-    this.setData({
-      'cartTotalCounts': cart.getCartTotalCounts(),
-    });
+    setTimeout(()=>{
+      //即时修改购物车数量
+      this.setData({
+        'cartTotalCounts': cart.getCartTotalCounts(),
+      });
+    },1000)
+    
   },
   addToCard: function () {
     var tempObj = {};
