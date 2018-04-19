@@ -25,8 +25,8 @@
       <view class="middle-border"></view>
       <view class="add-cart-btn {{product.stock==0?'disabled':''}}" 
       bindtap="onAddingToCard">
-      <view class="good_box" hidden="{{hide_good_box}}"  style="left: {{bus_x}}px; top: {{bus_y}}px;position:fixed">
-    <view style='width:20rpx;height:50rpx;background-color:black'></view>
+      <view class="good_box" hidden="{{hide_good_box}}" style="left: {{bus_x}}px; top: {{bus_y}}px;position:fixed">
+    <view style='width:16rpx;height:23rpx;background-color:black'></view>
   </view>
         <text>加入购物车</text>
         <image src="../../imgs/icon/cart.png" class="cart-icon"></image>

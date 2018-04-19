@@ -58,7 +58,7 @@
   height: 100rpx;
   margin: 30rpx auto;
   border-radius: 100rpx;
-  background-color: #AB956D;
+  background-color: #a1a46d;
   color: #fff;
   display: flex;
   align-items: center;

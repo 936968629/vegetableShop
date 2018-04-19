@@ -21,11 +21,13 @@ Page({
   onLoad: function (options) {
       var id = options.id;
       this._loadData(id);
+      this.setData({
+        'cartTotalCounts': cart.getCartTotalCounts(),
+      });
   },
 
-  onReady:function(){
-
-  },
+  // onReady:function(){
+  // },
 
   _loadData:function(id){
     product.getDetailInfo(id,(res)=>{
