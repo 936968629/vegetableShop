@@ -48,9 +48,12 @@ Page({
 
     });
   },
-
-  onProductsItemTap:function(){
-
+  //商品点击事件
+  onProductsItemTap:function(event){
+    var id = category.getDataSet(event, 'id');
+    wx.navigateTo({
+      url: '../product/product?id=' + id,
+    });
   },
   //分类点击
   categoryClick: function (event) {

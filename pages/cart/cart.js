@@ -132,5 +132,12 @@ Page({
     wx.navigateTo({
       url: '../order/order?account='+this.data.account+'&from=cart',
     })
+  },
+  //商品点击
+  onProductsItemTap:function(event){
+    var id = cart.getDataSet(event,'id');
+    wx.navigateTo({
+      url: '../product/product?id='+id,
+    })
   }
 })

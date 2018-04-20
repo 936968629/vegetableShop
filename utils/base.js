@@ -3,7 +3,7 @@ import {Token} from "./token.js";
 class Base{
   constructor(){
     this.baseRequestUrl = "https://www.wenjunlin.xyz/api/v1/";
-    // this.baseRequestUrl = "http://bisheapi.project.com/api/v1/";
+    // this.baseRequestUrl = "http://bisheapi.cn/api/v1/";
   }
   //flag 为true不做未授权重置
   request(params, flag) {

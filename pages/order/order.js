@@ -87,7 +87,7 @@ Page({
     //支付分两步，第一步是生成订单号，然后根据订单号支付
     order.doOrder(orderInfo, (data) => {
       //订单生成成功
-      if (data.pass) {
+      if (data.pass && !data.hasOwnProperty('pro_status') ) {
         //更新订单状态
         var id = data.order_id;
         that.data.id = id;
@@ -95,7 +95,12 @@ Page({
         //开始支付
         that._execPay(id);
       } else {
-        that._orderFail(data);  // 下单失败
+        if ( data.hasOwnProperty('pro_status') ){
+          this.showTips('下单失败',data.name_status+'商品已下架');
+        }else{
+          that._orderFail(data);  // 下单失败 库存不足
+        }
+        
       }
     });
   },
