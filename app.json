@@ -8,7 +8,8 @@
     "pages/my/my",
     "pages/more/more",
     "pages/order/order",
-    "pages/pay-result/pay-result"
+    "pages/pay-result/pay-result",
+    "pages/my-order/my-order"
   ],
   "window": {
     "backgroundTextStyle": "light",

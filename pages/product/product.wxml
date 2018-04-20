@@ -64,7 +64,10 @@
         </block>
       </view>
       <view hidden="{{currentTabsIndex!=2}}" class="product-detail-protect">
-        <view>七天无理由退货</view>
+        <view>
+        联系客服QQ:123456789
+        您的满意,是我们永恒的追求
+        </view>
       </view>
     </view>
   </view>
