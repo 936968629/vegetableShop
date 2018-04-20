@@ -31,8 +31,8 @@
   </view>
 
   <view class="my-order">
-    <view class="item-title">我的订单</view>
-    <view class="item-main">
+    <view class="item-title" bindtap='toMyorder'>我的订单</view>
+    <!-- <view class="item-main">
       <block wx:for="{{orderArr}}">
         <view class="order-item">
           <view class="order-header" bindtap="showOrderDetailInfo" data-id="{{item.id}}">
@@ -59,7 +59,7 @@
           </view>
         </view>
       </block>
-    </view>
+    </view> -->
   </view>
   
 </view>
