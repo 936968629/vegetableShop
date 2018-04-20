@@ -1,4 +1,6 @@
 // pages/my/my.js
+import {My} from './myModel.js';
+var my = new My();
 Page({
 
   /**
@@ -25,7 +27,10 @@ Page({
   },
   //跳转到我的订单
   toMyorder:function(event){
-    
+    // var id = my.getDataSet(event,'id');
+    wx.navigateTo({
+      url: '../my-order/my-order',
+    })
   }
 
 })
