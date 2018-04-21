@@ -11,7 +11,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:-1,
+    id:null,
   },
 
   /**
@@ -31,6 +31,35 @@ Page({
     address.getAddress((res) => {
       this._bindAddress(res);
     });
+  },
+
+  onShow:function(){
+    if (this.data.id) {
+      this._fromOrder(this.data.id);
+    }
+  },
+  _fromOrder: function (id) {
+    if (id) {
+      var that = this;
+      //下单后，支付成功或者失败后，点左上角返回时能够更新订单状态 所以放在onshow中
+      // var id = this.data.id;
+      order.getOrderInfoById(id, (data) => {
+        that.setData({
+          orderStatus: data.status,
+          productsArr: data.snap_items,
+          account: data.total_price,
+          basicInfo: {
+            orderTime: data.create_time,
+            orderNo: data.order_no
+          },
+        });
+
+        // 快照地址
+        var addressInfo = data.snap_address;
+        addressInfo.totalDetail = address.setAddressInfo(addressInfo);
+        that._bindAddressInfo(addressInfo);
+      });
+    }
   },
   //微信里修改地址
   editAddress: function (event) {

@@ -1,1 +1,19 @@
 /* pages/pay-result/pay-result.wxss */
+.pay-result{
+    margin: 60rpx 0;
+    text-align: center;
+}
+.pay-result image{
+    width: 200rpx;
+    height: 200rpx;
+}
+.pay-result view{
+    font-size: 40rpx;
+    color: #000;
+    margin-top: 20rpx;
+}
+
+.pay-result button{
+    margin: 100rpx 20rpx;
+}
+
