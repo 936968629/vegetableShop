@@ -1,2 +1,33 @@
 <!--pages/my-order/my-order.wxml-->
-<text>pages/my-order/my-order.wxml</text>
+<!-- <text>pages/my-order/my-order.wxml</text> -->
+<view class="container my-container">
+  <view class="item-main">
+    <block wx:for="{{orderArr}}">
+      <view class="order-item">
+        <view class="order-header" bindtap="showOrderDetailInfo" data-id="{{item.id}}">
+          <text>订单编号:</text>
+          <text class="order-no-txt">{{item.order_no}}</text>
+        </view>
+        <view class="order-main" bindtap="showOrderDetailInfo" data-id="{{item.id}}">
+          <view class="item-left">
+            <image src="{{item.snap_img}}"></image>
+          </view>
+          <view class="item-middle">
+            <view>{{item.snap_name}}</view>
+            <view>{{item.total_count}}件商品</view>
+          </view>
+          <view class="item-right">
+            <text class="order-status-txt unpay" wx:if="{{item.status==1}}">待付款</text>
+            <text class="order-status-txt payed" wx:if="{{item.status==2}}">已付款</text>
+            <text class="order-status-txt done" wx:if="{{item.status==3}}">已发货</text>
+          </view>
+        </view>
+        <view class="order-bottom" wx:if="{{item.status==1}}">
+          <text>实付:￥{{item.total_price}}</text>
+          <view class="pay" bindtap="rePay" data-id="{{item.id}}" data-index="{{index}}">付款</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+</view>
