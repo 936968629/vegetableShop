@@ -1,0 +1,48 @@
+/* pages/index-search/index-search.wxss */
+@import "../tpls/base.wxss";
+.search-view{
+  width: 100%;
+  height: 60rpx;
+}
+.search-main{
+  display: flex;
+  flex-wrap:wrap;
+  align-content: space-between;
+  margin-left: 30%; 
+}
+.search_input{
+  border-bottom: 1px solid gray;
+}
+.search-main input{
+  width: 250rpx;
+}
+.search-img{
+  width: 40rpx;
+  height: 50rpx;
+  /* float: left; */
+   display: block; 
+  /* margin-left: 50rpx; */
+}
+
+.history{
+  height:60rpx;
+}
+.local{
+  line-height: 30rpx;
+  background-color: #80aba9;
+  padding: 5px 10px;
+  text-align: center;
+  display: inline-flex;
+   /* float: left;  */
+  margin: 5rpx;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-size: 30rpx;
+  letter-spacing: 2rpx;
+}
+.clearBtn{
+
+}
+.clearfont{
+  font-size: 32rpx;
+}

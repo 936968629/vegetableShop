@@ -1,0 +1,26 @@
+<!--pages/index-search/index-search.wxml-->
+<!-- <text>pages/index-search/index-search.wxml</text> -->
+<view class='container'>
+  <view class='search-view'>
+    <view class='search-main'>
+      <view class='search_input'>
+        <input name="name" auto-focus placeholder="请输入商品名"
+    bindinput='listenerNameInput' />
+      </view>
+      <image class='search-img' src="../../imgs/search.png" bindtap='more' data-type='search'></image>
+    </view>
+  </view>
+  <view class="history">
+    <view class="local" wx:for="{{getSearch}}" wx:for-index="idx" wx:for-item="itemName" wx:key="idx" >
+      <view wx:if="{{itemName != ''}}" bindtap='tagSearch'>{{itemName}}</view>
+    </view>
+    <!-- <modal class="modal" hidden="{{modalHidden}}" bindconfirm="modalChangeConfirm" bindcancel="modalChangeCancel">
+      <view> 没有标题没有蒙层没有确定的modal </view>
+      <view> 内容可以插入节点 </view> 
+    </modal> -->
+    <view class='clearBtn' style="display:inline-block" bindtap="clearSearchStorage">
+    <view class='clearfont'>清空浏览记录</view>
+    </view>
+  </view>
+
+</view>

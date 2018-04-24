@@ -85,6 +85,11 @@ Page({
       'name':e.detail.value
     });
   },
+  listenerFocusInput:function(e){
+    wx.navigateTo({
+      url: '../index-search/index-search',
+    })
+  },
   // onPullDownRefresh:function(){
   //   // wx.stopPullDownRefresh();
   //   wx.showToast({

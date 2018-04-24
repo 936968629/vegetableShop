@@ -5,7 +5,7 @@
     <view class='search-main'>
       <view class='search_input'>
         <input class="input" name="name" placeholder="请输入商品名" 
-    bindinput="userNameInput" bindinput='listenerNameInput' />
+    bindinput='listenerNameInput' bindfocus='listenerFocusInput' />
       </view>
       <image class='search-img' src="../../imgs/search.png" bindtap='more' data-type='search'></image>
     </view>

@@ -9,7 +9,8 @@
     "pages/more/more",
     "pages/order/order",
     "pages/pay-result/pay-result",
-    "pages/my-order/my-order"
+    "pages/my-order/my-order",
+    "pages/index-search/index-search"
   ],
   "window": {
     "backgroundTextStyle": "light",
