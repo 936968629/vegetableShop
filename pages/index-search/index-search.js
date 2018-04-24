@@ -48,9 +48,9 @@ Page({
       var searchData = wx.getStorageSync('searchData') || []
 
       this.changeSort(searchData,this.data.name);
-      searchData.push(this.data.name)
+      // searchData.push(this.data.name)
 
-      wx.setStorageSync('searchData', searchData)
+      // wx.setStorageSync('searchData', searchData)
     }
     // wx.navigateTo({
     //   url: url,
@@ -76,10 +76,21 @@ Page({
   },
   isInArray:function(arr, value){
     for(var i = 0; i<arr.length; i++){
-      if (value === arr[i]) {
+      if (this.Trim(value,'g') === arr[i]) {
         return true;
       }
     }
     return false;
+  },
+  Trim: function (str, is_global){
+    var result;
+    result = str.replace(/(^\s+)|(\s+$)/g, "");
+    if (is_global.toLowerCase() == "g") {
+      result = result.replace(/\s/g, "");
+    }
+    return result;
   }
+  
+
+
 })
