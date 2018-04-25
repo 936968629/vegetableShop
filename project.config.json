@@ -46,7 +46,7 @@
 					"id": 2,
 					"name": "pages/index-search/index-search",
 					"pathName": "pages/index-search/index-search",
-					"query": "type=all&page=1"
+					"query": "type=all&page=1&name=a"
 				}
 			]
 		}

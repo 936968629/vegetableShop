@@ -23,7 +23,6 @@ Page({
    */
   onShow: function () {
     var searchData = wx.getStorageSync('searchData') || []
-    console.log(searchData)
     if(searchData.length != 0){
       this.setData({
         'getSearch':searchData
@@ -46,15 +45,12 @@ Page({
     if (this.data.name != '') {
       //调用API从本地缓存中获取数据
       var searchData = wx.getStorageSync('searchData') || []
-
-      this.changeSort(searchData,this.data.name);
-      // searchData.push(this.data.name)
-
-      // wx.setStorageSync('searchData', searchData)
+      searchData = this.changeSort(searchData,this.data.name);
+      wx.setStorageSync('searchData', searchData)
     }
-    // wx.navigateTo({
-    //   url: url,
-    // });
+    wx.navigateTo({
+      url: url,
+    });
   },
   listenerNameInput: function (e) {
     this.setData({
@@ -63,7 +59,10 @@ Page({
   },
   //清空浏览记录
   clearSearchStorage:function(e){
-
+    wx.setStorageSync('searchData', [])
+    this.setData({
+      'getSearch': []
+    });
   },
   //标签点击
   tagSearch:function(e){
@@ -72,12 +71,20 @@ Page({
   //改变数组的顺序
   changeSort:function(arr,needle){
     var flag = this.isInArray(arr,needle);
-    console.log(flag);
+    if(flag !== false){
+      arr.splice(flag, 1) 
+    }else{
+      if (arr.length >= 7) {
+        arr.pop();
+      }
+    }
+    arr.unshift(needle)
+    return arr
   },
   isInArray:function(arr, value){
     for(var i = 0; i<arr.length; i++){
       if (this.Trim(value,'g') === arr[i]) {
-        return true;
+        return i;
       }
     }
     return false;
@@ -91,6 +98,4 @@ Page({
     return result;
   }
   
-
-
 })

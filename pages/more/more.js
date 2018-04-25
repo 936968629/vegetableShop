@@ -57,10 +57,15 @@ Page({
           'showloading': false
         })
       }else{
-        var allProducts = this.data.allProducts.concat(res);
+        var allProducts = this.data.allProducts.concat(res)
+        var flag = true,flagTwo = false;
+        if(page == 1){
+          flag = false,flagTwo=true
+        }
         this.setData({
           'allProducts': allProducts,
-          'showloading':true
+          'showloading': flag,
+          // 'showMore':flagTwo
         });
       }
     });
