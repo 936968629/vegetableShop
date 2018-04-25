@@ -1,6 +1,7 @@
 // pages/index/index.js
 import {Index} from 'indexModel.js';
 var index = new Index();
+var app = getApp();
 Page({
 
   /**
@@ -14,6 +15,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.getUserInfo({
+      success: res => {
+        app.globalData.userInfo = res.userInfo
+        // this.setData({
+        //   userInfo: res.userInfo,
+        //   hasUserInfo: true
+        // })
+      }
+    })
     this._loadData();
     this._loadHotProduct();
     this._loadNewProduct();
