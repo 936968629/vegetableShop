@@ -17,6 +17,7 @@ Page({
     this._loadData();
     this._loadHotProduct();
     this._loadNewProduct();
+    
   },
   //加载幻灯片...
   _loadData:function(){

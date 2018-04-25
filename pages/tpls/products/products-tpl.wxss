@@ -10,12 +10,13 @@
   border-radius: 10rpx;
   margin-right: 0;
   margin-bottom: 10rpx;
-  background-color: #F5F6F5;
+  /* background-color: #F5F6F5; */
   text-align: center;
+  border:1rpx solid beige;
 }
 .products-image{
   margin: 10rpx auto 0 auto;
-  width:80%;
+  width:92%;
   height:220rpx;
   border-radius: 10rpx;
 }

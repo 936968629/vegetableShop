@@ -66,7 +66,11 @@ Page({
   },
   //标签点击
   tagSearch:function(e){
-
+    var keyword = base.getDataSet(e, 'key');
+    var url = '../more/more?type=search&name='+keyword;
+    wx.navigateTo({
+      url: url
+    })
   },
   //改变数组的顺序
   changeSort:function(arr,needle){
