@@ -28,7 +28,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -47,6 +47,12 @@
 					"name": "pages/index-search/index-search",
 					"pathName": "pages/index-search/index-search",
 					"query": "type=all&page=1&name=a"
+				},
+				{
+					"id": -1,
+					"name": "pages/my-order/my-order",
+					"pathName": "pages/my-order/my-order",
+					"query": ""
 				}
 			]
 		}

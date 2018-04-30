@@ -57,7 +57,7 @@ Page({
         // 快照地址
         var addressInfo = data.snap_address;
         addressInfo.totalDetail = address.setAddressInfo(addressInfo);
-        that._bindAddressInfo(addressInfo);
+        that._bindAddress(addressInfo);
       });
     }
   },

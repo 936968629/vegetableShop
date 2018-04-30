@@ -31,7 +31,9 @@
   </view>
 
   <view class="my-order">
-    <view class="item-title" bindtap='toMyorder'>我的订单</view>
+    <view class="item-title" bindtap='toMyorder'>
+    我的订单<image src="../../imgs/icon/arrow@right.png"></image>
+    </view>
     <!-- <view class="item-main">
       <block wx:for="{{orderArr}}">
         <view class="order-item">
