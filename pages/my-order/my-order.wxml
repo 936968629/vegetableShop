@@ -2,11 +2,12 @@
 <!-- <text>pages/my-order/my-order.wxml</text> -->
 <view class="container my-container">
   <view class="item-main">
-    <block wx:for="{{orderArr}}">
+    <block wx:for="{{orderArr}}" wx:key="{{orderArr}}">
       <view class="order-item">
         <view class="order-header" bindtap="showOrderDetailInfo" data-id="{{item.id}}">
           <text>订单编号:</text>
           <text class="order-no-txt">{{item.order_no}}</text>
+          <text class='order-date'>{{item.create_time}}</text>
         </view>
         <view class="order-main" bindtap="showOrderDetailInfo" data-id="{{item.id}}">
           <view class="item-left">
@@ -24,9 +25,13 @@
         </view>
         <view class="order-bottom" wx:if="{{item.status==1}}">
           <text>实付:￥{{item.total_price}}</text>
+          <text style='color:red'>{{item.timedown}}</text>
           <view class="pay" bindtap="rePay" data-id="{{item.id}}" data-index="{{index}}">付款</view>
         </view>
       </view>
+    </block>
+    <block wx:if="{{nodata}}">
+    <view class='show'>没有多余的商品了</view>
     </block>
   </view>
 
