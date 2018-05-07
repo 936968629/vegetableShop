@@ -164,3 +164,18 @@
 .no-data{
     background: #fff;
 }
+
+.redpoint{
+  display:inline-block;
+  height:15px;
+  width:15px;
+  line-height:12px;
+  text-align:center;
+  font-size:1.1em;
+  border-radius:16px;
+  color:#fff;
+  background:red;
+  position:relative;
+  top:-9px;
+  right:2px
+}

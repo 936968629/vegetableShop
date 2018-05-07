@@ -41,7 +41,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this._getmessCount();
   },
   //跳转到我的订单
   toMyorder:function(event){
@@ -72,5 +72,9 @@ Page({
         });
       }
     })
+  },
+  //获取消息数量
+  _getmessCount:function(){
+    
   }
 })
