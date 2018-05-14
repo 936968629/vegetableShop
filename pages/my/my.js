@@ -81,5 +81,10 @@ Page({
         messageCount:data.num
       })
     })
+  },
+  toMymessage:function(){
+    wx.navigateTo({
+      url: '../my-message/my-message',
+    })
   }
 })

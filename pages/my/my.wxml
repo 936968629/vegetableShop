@@ -34,7 +34,7 @@
     <view class="item-title" bindtap='toMyorder'>
     我的订单<image src="../../imgs/icon/arrow@right.png"></image>
     </view>
-    <view class="item-title" bindtap='toMyorder'>
+    <view class="item-title" bindtap='toMymessage'>
     我的消息
     <block wx:if='{{messageCount > 0}}'>
       <view class='redpoint'>{{messageCount}}</view>
