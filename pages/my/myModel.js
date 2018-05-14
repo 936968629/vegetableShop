@@ -23,5 +23,15 @@ class My extends Base{
 
     })
   }
+  //获取未读消息条数
+  getMessageNumber(callback){
+    var params = {
+      url: 'message/num',
+      sCallback: function (res) {
+        callback && callback(res);
+      },
+    };
+    this.request(params);
+  }
 }
 export {My}

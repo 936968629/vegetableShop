@@ -28,12 +28,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 0,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "pages/product/product",
-					"pathName": "pages/product/product",
+					"pathName": "pages/my/my",
 					"query": "id=4"
 				},
 				{

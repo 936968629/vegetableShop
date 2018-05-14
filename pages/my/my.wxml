@@ -35,7 +35,10 @@
     我的订单<image src="../../imgs/icon/arrow@right.png"></image>
     </view>
     <view class="item-title" bindtap='toMyorder'>
-    我的消息<view class='redpoint'>2</view>
+    我的消息
+    <block wx:if='{{messageCount > 0}}'>
+      <view class='redpoint'>{{messageCount}}</view>
+    </block>
     <image src="../../imgs/icon/arrow@right.png"></image>
     </view>
     <!-- <view class="item-main">

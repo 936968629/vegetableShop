@@ -75,6 +75,11 @@ Page({
   },
   //获取消息数量
   _getmessCount:function(){
-    
+    my.getMessageNumber((data) => {
+      console.log(data)
+      this.setData({
+        messageCount:data.num
+      })
+    })
   }
 })
