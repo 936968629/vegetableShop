@@ -1,2 +1,14 @@
 <!--pages/my-message/my-message.wxml-->
-<text>pages/my-message/my-message.wxml</text>
+<!-- <text>pages/my-message/my-message.wxml</text> -->
+<view class='main'>
+  <view>
+
+    <view class='read'>
+      <view class='notice-img'><image class='notice-image' src='../../imgs/news.png'></image></view>
+      <view class='notice-dl'>
+      
+      </view>
+    </view>
+
+  </view>
+</view>

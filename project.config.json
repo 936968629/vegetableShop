@@ -28,7 +28,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 4,
 			"list": [
 				{
 					"id": 0,
@@ -53,6 +53,12 @@
 					"name": "pages/my-order/my-order",
 					"pathName": "pages/my-order/my-order",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/my-message/my-message",
+					"pathName": "pages/my-message/my-message",
+					"query": "id=4"
 				}
 			]
 		}
