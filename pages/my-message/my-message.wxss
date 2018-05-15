@@ -14,7 +14,7 @@
   padding-bottom: 2px;
   border-bottom: 1px solid #f4f4f4;
 }
-.notice_img{
+.notice-img{
   float: left;
 }
 .notice-image{
@@ -32,4 +32,27 @@
     padding-top: 2rpx;
     color: #999;
     position: relative;
+}
+.notice-title{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.8em;
+}
+.notice-date{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 2rpx;
+    font-size: .7em;
+}
+.notice-content{
+    width: calc(100% - 55px);
+    font-size: 0.85em;
+    color: #333;
+    margin-left: 55px;
+    display: inline-block;
+    padding-bottom: 10px;
 }

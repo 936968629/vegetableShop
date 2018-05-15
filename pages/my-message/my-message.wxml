@@ -6,8 +6,19 @@
     <view class='read'>
       <view class='notice-img'><image class='notice-image' src='../../imgs/news.png'></image></view>
       <view class='notice-dl'>
-      
+          <view class='notice-title'>title</view>
+          <view class='notice-date'>date</view>
       </view>
+      <view class='notice-content'>content</view>
+    </view>
+
+    <view class='read'>
+      <view class='notice-img'><image class='notice-image' src='../../imgs/news.png'></image></view>
+      <view class='notice-dl'>
+          <view class='notice-title'>title</view>
+          <view class='notice-date'>date</view>
+      </view>
+      <view class='notice-content'>content</view>
     </view>
 
   </view>
