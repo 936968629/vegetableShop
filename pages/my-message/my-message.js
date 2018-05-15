@@ -9,14 +9,8 @@ Page({
    */
   data: {
     page:0,
-
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+    messageData:[],
+    nodata:false
   },
 
   /**
@@ -29,9 +23,16 @@ Page({
   _show:function(page){
     myMessgae.getData(page,10,(data)=>{
       console.log(data)
-      if(data.length > 0){
+      var arr = data.data;
+      if(arr.length > 0){
+        var allMessage = this.data.messageData.concat(arr)
         this.setData({
-          
+          messageData:allMessage,
+          page:this.data.page++
+        })
+      }else{
+        this.setData({
+          nodata: true
         })
       }
     })

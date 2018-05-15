@@ -2,24 +2,26 @@
 <!-- <text>pages/my-message/my-message.wxml</text> -->
 <view class='main'>
   <view>
-
+    <block wx:for='{{messageData}}' wx:key="{{messageData}}">
     <view class='read'>
+      <view class='notice-img'><image class='notice-image' src='../../imgs/news.png'></image></view>
+      <view class='notice-dl'>
+          <view class='notice-title'>{{item.title}}</view>
+          <view class='notice-date'>{{item.create_time}}</view>
+      </view>
+      <view class='notice-content'>{{item.content}}</view>
+    </view>
+    </block>
+    <!-- <view class='read'>
       <view class='notice-img'><image class='notice-image' src='../../imgs/news.png'></image></view>
       <view class='notice-dl'>
           <view class='notice-title'>title</view>
           <view class='notice-date'>date</view>
       </view>
       <view class='notice-content'>content</view>
-    </view>
-
-    <view class='read'>
-      <view class='notice-img'><image class='notice-image' src='../../imgs/news.png'></image></view>
-      <view class='notice-dl'>
-          <view class='notice-title'>title</view>
-          <view class='notice-date'>date</view>
-      </view>
-      <view class='notice-content'>content</view>
-    </view>
-
+    </view> -->
+    <block wx:if='{{nodata}}'>
+      <view class='nodata'>暂无数据</view>
+    </block>
   </view>
 </view>

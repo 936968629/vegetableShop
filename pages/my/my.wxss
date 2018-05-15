@@ -179,3 +179,9 @@
   top:-9px;
   right:2px
 }
+.btn_sq{
+  width: 228rpx;
+  height: 72rpx;
+  font-size: 1.0em;
+  background: #AB956D;
+}

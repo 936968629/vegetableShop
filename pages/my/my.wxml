@@ -1,10 +1,11 @@
 <!--pages/my/my.wxml-->
 <!-- <text>pages/my/my.wxml</text> -->
-
 <view class="container my-container">
   <view class="my-header">
     <image src="{{userInfo.avatarUrl}}"></image>
     <text class="name">{{userInfo.nickName}}</text>
+    <!-- <open-data type="userNickName"></open-data> -->
+    <button wx:if="{{canIUse}}" class='btn_sq' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">微信授权</button>
   </view>
   <!--地址管理-->
   <view class="my-address">
