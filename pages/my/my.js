@@ -66,7 +66,7 @@ Page({
     var that = this;
     wx.chooseAddress({
       success: function (res) {
-        console.log(res);
+        // console.log(res);
         var addressInfo = {
           name: res.userName,
           mobile: res.telNumber,
@@ -87,7 +87,7 @@ Page({
   //获取消息数量
   _getmessCount:function(){
     my.getMessageNumber((data) => {
-      console.log(data)
+      // console.log(data)
       this.setData({
         messageCount:data.num
       })
@@ -100,7 +100,7 @@ Page({
   },
   //用户授权
   bindGetUserInfo:function(e){
-    console.log(e)
+    // console.log(e)
     var mysign = false;
     if ( e.detail.hasOwnProperty('userInfo') ){
       mysign = true
