@@ -15,7 +15,8 @@ class My extends Base{
           fail: function (res) {
             typeof cb == "function" && cb({
               avatarUrl: '../../imgs/icon/user@default.png',
-              nickName: '未授权'
+              nickName: '未授权',
+              sign:false,
             });
           }
         });

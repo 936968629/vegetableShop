@@ -14,7 +14,7 @@ Page({
       avatarUrl: '../../imgs/icon/user@default.png',
       nickName: '未授权'
     },
-    showbtn:false
+    showbtn:true
   },
 
   /**
@@ -25,11 +25,17 @@ Page({
     this._getAddressInfo();
   },
   _loadData:function(){
-    // my.getUserInfo( (data)=>{
-    //   this.setData({
-    //     userInfo:data
-    //   })
-    // });
+    my.getUserInfo( (data)=>{
+      console.log(data)
+      var mysign = false
+      if ( !data.hasOwnProperty('sign') ){
+        mysign = true
+      }
+      this.setData({
+        userInfo: data,
+        showbtn: mysign
+      })
+    });
   },
   _getAddressInfo:function(){
     address.getAddress((addressInfo) => {
@@ -95,9 +101,13 @@ Page({
   //用户授权
   bindGetUserInfo:function(e){
     console.log(e)
+    var mysign = false;
+    if ( e.detail.hasOwnProperty('userInfo') ){
+      mysign = true
+    }
     this.setData({
       userInfo:e.detail.userInfo,
-      showbtn:false
+      showbtn:mysign
     })
   }
 })
