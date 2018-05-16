@@ -184,4 +184,11 @@
   height: 72rpx;
   font-size: 1.0em;
   background: #AB956D;
+  justify-content:flex-end;
+  display:flex;
+  margin-right: 0;
 }
+button::after{
+  display:none;
+}
+

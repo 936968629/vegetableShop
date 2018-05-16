@@ -9,7 +9,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    userInfo:{
+      avatarUrl: '../../imgs/icon/user@default.png',
+      nickName: '未授权'
+    },
+    showbtn:false
   },
 
   /**
@@ -20,11 +25,11 @@ Page({
     this._getAddressInfo();
   },
   _loadData:function(){
-    my.getUserInfo( (data)=>{
-      this.setData({
-        userInfo:data
-      })
-    });
+    // my.getUserInfo( (data)=>{
+    //   this.setData({
+    //     userInfo:data
+    //   })
+    // });
   },
   _getAddressInfo:function(){
     address.getAddress((addressInfo) => {
@@ -85,6 +90,14 @@ Page({
   toMymessage:function(){
     wx.navigateTo({
       url: '../my-message/my-message',
+    })
+  },
+  //用户授权
+  bindGetUserInfo:function(e){
+    console.log(e)
+    this.setData({
+      userInfo:e.detail.userInfo,
+      showbtn:false
     })
   }
 })
