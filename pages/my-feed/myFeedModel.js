@@ -6,13 +6,14 @@ class MyFeed extends Base{
   }
   commitContent(content,callback){
     var params = {
-      url:'',
+      url:'message/feedback',
       type:'POST',
       data:{content:content},
       sCallback:function(res){
         callback && callback(res)
       }
     }
+    this.request(params);
   }
 }
 
