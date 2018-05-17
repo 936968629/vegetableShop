@@ -1,0 +1,7 @@
+/* pages/my-feed/my-feed.wxss */
+.inptext{
+  font-size: 32rpx;
+}
+.vietextarea{
+  width: 100%;
+}

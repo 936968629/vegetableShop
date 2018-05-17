@@ -1,0 +1,13 @@
+<!--pages/my-feed/my-feed.wxml-->
+<!-- <text>pages/my-feed/my-feed.wxml</text> -->
+
+<view class='main'>
+  <form bindsubmit='bindFormSubmit'>
+  <view>
+    <view class='inptext'><textarea placeholder='请将产品的问题反馈给我们，我们会及时解决' name='content' auto-focus='true' maxlength='120' class='vietextarea'></textarea></view>
+  </view>
+  <view>
+    <button form-type='submit'>提交</button>
+  </view>
+  </form>
+</view>

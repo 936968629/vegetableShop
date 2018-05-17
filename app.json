@@ -11,7 +11,8 @@
     "pages/pay-result/pay-result",
     "pages/my-order/my-order",
     "pages/index-search/index-search",
-    "pages/my-message/my-message"
+    "pages/my-message/my-message",
+    "pages/my-feed/my-feed"
   ],
   "window": {
     "backgroundTextStyle": "light",

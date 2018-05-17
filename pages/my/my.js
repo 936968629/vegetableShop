@@ -98,6 +98,11 @@ Page({
       url: '../my-message/my-message',
     })
   },
+  tofeedback:function(){
+    wx.navigateTo({
+      url: '../my-feed/my-feed',
+    })
+  },
   //用户授权
   bindGetUserInfo:function(e){
     // console.log(e)

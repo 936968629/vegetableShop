@@ -30,7 +30,7 @@
       <view class="add-new-address" bindtap="editAddress"><text class="icon">+</text><text>添加地址</text></view>
     </block>
   </view>
-
+  <!--订单管理-->
   <view class="my-order">
     <view class="item-title" bindtap='toMyorder'>
     我的订单<image src="../../imgs/icon/arrow@right.png"></image>
@@ -41,6 +41,9 @@
       <view class='redpoint'>{{messageCount}}</view>
     </block>
     <image src="../../imgs/icon/arrow@right.png"></image>
+    </view>
+    <view class='item-title' bindtap='tofeedback'>
+    意见反馈<image src="../../imgs/icon/arrow@right.png"></image>
     </view>
     <!-- <view class="item-main">
       <block wx:for="{{orderArr}}">
@@ -72,4 +75,5 @@
     </view> -->
   </view>
   
+
 </view>
