@@ -115,7 +115,8 @@
     padding:20rpx 30rpx;
 }
 .order-main .item-left{
-    flex-basis: 150rpx;
+    flex-basis: 150rpx; 
+    /* width: 150rpx; */
     height: 100%;
     background-color: #F5F6F5;
     border-radius: 4rpx;
@@ -136,9 +137,14 @@
 }
 .order-main .item-right{
     display: flex;
-    flex-basis: 120rpx;
+     flex-basis: 120rpx; 
+    /* width: 120rpx; */
     align-items: center;
     justify-content:flex-end;
+    flex-direction: column;
+}
+.order-main .item-right text{
+    margin: 5rpx 0;
 }
 
 .order-bottom{

@@ -48,6 +48,13 @@
 .order-status-txt.done{
     color: #57AB53;
 }
+.order-status-txt.confirmReceive{
+  color: red;
+}
+.order-status-txt.receive{
+  color: #d8e698;
+}
+
 
 .order-no-txt{
     letter-spacing: 2rpx;

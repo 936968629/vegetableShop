@@ -16,11 +16,14 @@
           <view class="item-middle">
             <view>{{item.snap_name}}</view>
             <view>{{item.total_count}}件商品</view>
+            <view>快递单号:dasdasdasdkjsdasd</view>
           </view>
           <view class="item-right">
             <text class="order-status-txt unpay" wx:if="{{item.status==1}}">待付款</text>
             <text class="order-status-txt payed" wx:if="{{item.status==2}}">已付款</text>
             <text class="order-status-txt done" wx:if="{{item.status==3}}">已发货</text>
+            <text class="order-status-txt confirmReceive" wx:if="{{item.status==3}}">确认收货</text>
+            <text class="order-status-txt receive" wx:if="{{item.status==5}}">已收货</text>
           </view>
         </view>
         <view class="order-bottom" wx:if="{{item.status==1}}">
