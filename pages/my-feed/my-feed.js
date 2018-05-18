@@ -31,7 +31,8 @@ Page({
       if(data.code == 1){
         //成功
         wx.showModal({
-          title: '反馈成功',
+          title: '提示',
+          content:'反馈成功',
           showCancel:false,
           success: function (res) {
             if (res.confirm) {
@@ -44,14 +45,15 @@ Page({
         
       }else if(data.code == -1){
         wx.showModal({
-          title:'反馈失败',
+          title:'提示',
           showCancel: false,
           content: '反馈数量过多，待后台解决',
           duration: 2000
         })
       }else{
         wx.showModal({
-          title: '失败',
+          title: '提示',
+          content:'反馈失败',
           showCancel: false,
           duration: 2000
         })
