@@ -16,8 +16,8 @@
           <view class="item-middle">
             <view>{{item.snap_name}}</view>
             <view>{{item.total_count}}件商品</view>
-            <view>快递名称:中通快递</view>
-            <view wx:if="{{item.status==3}}">快递单号:dasdasdasdkjsdasd</view>
+            <view wx:if="{{item.status==3 || item.status==5}}">快递名称:{{item.kuaidi_name}}</view>
+            <view wx:if="{{item.status==3 || item.status==5}}">快递单号:{{item.kuaidi_order}}</view>
           </view>
           <view class="item-right">
             <text class="order-status-txt unpay" wx:if="{{item.status==1}}">待付款</text>

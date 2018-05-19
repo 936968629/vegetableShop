@@ -60,7 +60,7 @@ Page({
         })
       }
       console.log(tiArr)
-      
+      // order.execSetStorageSync(false)
       this.setData({
         pageIndex:this.data.pageIndex+1,
       })
