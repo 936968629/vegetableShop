@@ -1,6 +1,8 @@
 // pages/my-order/my-order.js 我的订单
 import {MyOrder} from "./myOrderModel.js";
+import {Order} from "../order/orderModel.js";
 var myOrder = new MyOrder();
+var order = new Order();
 Page({
 
   /**
@@ -24,7 +26,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this._getOrders();
+    var newOrderFlag = order.hasNewOrder(); 
+    if( newOrderFlag == true){
+      this._getOrders();
+    }
+    
   },
   _getOrders: function (callback) {
     myOrder.getOrders(this.data.pageIndex, (res) => {
@@ -92,7 +98,13 @@ Page({
         }
       }
     })
-    
+  },
+  //订单详情
+  showOrderDetailInfo:function(e){
+    var id = myOrder.getDataSet(e, 'id');
+    wx.navigateTo({
+      url: '../order/order?from=order&id='+ id,
+    })
   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
@@ -105,6 +117,13 @@ Page({
       wx.hideNavigationBarLoading() //完成停止加载
       wx.stopPullDownRefresh() //停止下拉刷新
     }, 1000);
+  },
+  //去付款
+  rePay:function(e){
+    var id = myOrder.getDataSet(e, 'id');
+    wx.navigateTo({
+      url: '../order/order?from=order&id=' + id,
+    })
   },
   /**
    * 页面上拉触底事件的处理函数

@@ -19,13 +19,26 @@ Page({
    */
   onLoad: function (options) {
     //接受传递的参数
-    this.data.account = options.account;
+    var froma = options.from;
+
+    if (froma == 'cart'){
+      this._formCart(options.account)
+    }else{
+      this.setData({
+        id:options.id
+      })
+      this._fromOrder(options.id)
+    }
+  },
+  //购物车页面跳转到该页面
+  _formCart:function(account){
+    this.data.account = account;
     var productArr;
     productArr = cart.getCartDataFromLocal(true);
     // console.log(productArr);
     this.setData({
       'productsArr': productArr,
-      'account': options.account,
+      'account': account,
       'orderStatus': 0
     });
     address.getAddress((res) => {
@@ -38,6 +51,7 @@ Page({
       this._fromOrder(this.data.id);
     }
   },
+  //订单页面跳转过来
   _fromOrder: function (id) {
     if (id) {
       var that = this;
@@ -151,6 +165,13 @@ Page({
       }
     });
   },
+
+  _oneMoreTimePay(){
+    if(this.data.id){
+      this._execPay(this.data.id);
+    }
+    
+  },
   //将已经下单的商品从购物车删除
   deleteProducts: function () {
     var ids = [], arr = this.data.productsArr;
@@ -194,6 +215,7 @@ Page({
       }
     });
   },
+
   /*
   * 提示窗口
   * params:

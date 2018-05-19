@@ -30,7 +30,7 @@
         <view class="order-bottom" wx:if="{{item.status==1}}">
           <text>实付:￥{{item.total_price}}</text>
           <text style='color:red'>{{item.timedown}}</text>
-          <view class="pay" bindtap="rePay" data-id="{{item.id}}" data-index="{{index}}">付款</view>
+          <view class="pay" bindtap="rePay" data-id="{{item.id}}" data-index="{{index}}">去付款</view>
         </view>
       </view>
     </block>

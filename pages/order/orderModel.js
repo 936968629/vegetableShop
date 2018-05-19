@@ -75,5 +75,10 @@ class Order extends Base{
     };
     this.request(allParams);
   }
+  
+  hasNewOrder(){
+    var flag = wx.getStorageSync(this._storageKeyName);
+    return flag == true;
+  }
 }
 export {Order}
