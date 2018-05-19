@@ -134,6 +134,7 @@
 }
 .order-main .item-middle view{
     margin: 10rpx 0;
+    font-size: 25rpx;
 }
 .order-main .item-right{
     display: flex;

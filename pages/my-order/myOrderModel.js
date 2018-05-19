@@ -14,5 +14,17 @@ class MyOrder extends Base{
     };
     this.request(params)
   }
+  //
+  editOrderStatus(id,uid,callback){
+    var params = {
+      url: 'order/confirm',
+      data: { id: id, uid: uid },
+      type: 'post',
+      sCallback: function (data) {
+        callback && callback(data)
+      }
+    }
+    this.request(params)
+  }
 }
 export {MyOrder}

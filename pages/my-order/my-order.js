@@ -61,7 +61,39 @@ Page({
       callback && callback();
     })
   },
-
+  //确认收货
+  confirmreceive:function(e){
+    var id = myOrder.getDataSet(e,'id');
+    var uid = myOrder.getDataSet(e,'uid');
+    var orderArrm = this.data.orderArr;
+    var that = this;
+    wx.showModal({
+      title: '提示',
+      content: '确认收货?',
+      success:function(res){
+        if (res.confirm) {
+          myOrder.editOrderStatus(id,uid,(data)=>{
+            console.log(data)
+            if(data.code == 1){
+              //修改成功
+              for (var i in orderArrm){
+                if (orderArrm[i]['id'] == data.id){
+                  orderArrm[i]['status'] = 5;
+                }
+              }
+              that.setData({
+                orderArr: orderArrm
+              })
+            }
+          })
+        
+        } else if (res.cancel) {
+        
+        }
+      }
+    })
+    
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
