@@ -67,8 +67,17 @@ Page({
   onProductsItemTap: function (event) {
     // console.log(event);
     var id = index.getDataSet(event, 'id');
+    var type = index.getDataSet(event,'type');
+    var url;
+    if(type == 1){
+      url = '../product/product?id=' + id;
+    }else if(type == 2){
+      url = '../theme/theme?id=' + id+'&name=专题';
+    }else{
+      return false;
+    }
     wx.navigateTo({
-      url: '../product/product?id=' + id,
+      url: url,
     });
   },
   onThemesItemTap:function(event){

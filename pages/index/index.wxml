@@ -13,7 +13,7 @@
  
   <swiper autoplay='true' indicator-dots='true' class='swiper'>
   <block wx:for="{{bannerData}}" wx:key="bannerData">
-    <swiper-item class="banner-item" data-id="{{item.key_word}}" bindtap="onProductsItemTap">
+    <swiper-item class="banner-item" data-id="{{item.key_word}}" data-type="{{item.type}}" bindtap="onProductsItemTap">
       <image src="{{item.img}}"></image>
     </swiper-item>
   </block>
