@@ -66,7 +66,7 @@ Page({
     var that = this;
     wx.chooseAddress({
       success: function (res) {
-        // console.log(res);
+        console.log(res);
         var addressInfo = {
           name: res.userName,
           mobile: res.telNumber,
@@ -81,6 +81,9 @@ Page({
             that.showTips('操作提示', '地址信息更新失败！');
           }
         });
+      },
+      fail:function(re){
+        console.log(re)
       }
     })
   },
@@ -102,6 +105,30 @@ Page({
     wx.navigateTo({
       url: '../my-feed/my-feed',
     })
+  },
+  toauth:function(e){
+      var that = this
+      if (wx.openSetting) {
+        wx.openSetting({
+          success: function (res) {
+            console.log(res.authSetting['scope.userInfo'])
+            if(!res.authSetting['scope.userInfo']){
+              that.setData({
+                showbtn:false,
+                userInfo: {
+                  avatarUrl: '../../imgs/icon/user@default.png',
+                  nickName: '未授权'
+                },
+              })
+            }
+          }
+        })
+      } else {
+        wx.showModal({
+          title: '授权提示',
+          content: '您的微信版本过低，暂时不开放该功能'
+        })
+      }
   },
   //用户授权
   bindGetUserInfo:function(e){

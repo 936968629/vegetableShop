@@ -27,9 +27,8 @@ Page({
    */
   onShow: function () {
     var newOrderFlag = order.hasNewOrder(); 
-    if( newOrderFlag == true){
-      this._getOrders();
-    }
+    this._getOrders();
+
     
   },
   _getOrders: function (callback) {

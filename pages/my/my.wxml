@@ -45,6 +45,10 @@
     <view class='item-title' bindtap='tofeedback'>
     意见反馈<image src="../../imgs/icon/arrow@right.png"></image>
     </view>
+    <view class='item-title' bindtap='toauth'>
+    <!-- <button open-type='openSetting'>权限管理</button> -->
+     权限管理<image src="../../imgs/icon/arrow@right.png"></image> 
+    </view>
     <!-- <view class="item-main">
       <block wx:for="{{orderArr}}">
         <view class="order-item">
