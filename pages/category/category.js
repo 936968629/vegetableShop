@@ -35,7 +35,7 @@ Page({
       category.getProductsByCategory(data[0].id, (productdata) => {
         var dataObj = {
           products: productdata,
-          topImgUrl: data[0].topic_imgl,
+          topImgUrl: data[0].topic_img,
           title: data[0].name,
         }
         console.log(dataObj);
