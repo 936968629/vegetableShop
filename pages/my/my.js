@@ -111,7 +111,7 @@ Page({
       if (wx.openSetting) {
         wx.openSetting({
           success: function (res) {
-            console.log(res.authSetting['scope.userInfo'])
+            // console.log(res.authSetting['scope.userInfo'])
             if(!res.authSetting['scope.userInfo']){
               that.setData({
                 showbtn:false,

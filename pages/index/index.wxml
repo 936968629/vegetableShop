@@ -38,7 +38,7 @@
       <view class='home-main-header'>最热商品</view>
       <view class="products-box">
         <block wx:for="{{hotData}}" wx:key="{{hotData}}">
-            <view class="products-item" bindtap="onProductsItemTap" data-id="{{item.id}}">
+            <view class="products-item" bindtap="onProductsItemTap" data-id="{{item.id}}" data-type='1'>
                 <image class="products-image" src="{{item.main_img_url}}" mode="aspectFill"></image>
                 <view class="products-item-bottom">
                     <text class="name">{{item.name}}</text>
@@ -51,7 +51,7 @@
       <view class='home-main-header'>最新商品</view>
       <view class="products-box">
         <block wx:for="{{newData}}" wx:key="{{newData}}">
-            <view class="products-item" bindtap="onProductsItemTap" data-id="{{item.id}}">
+            <view class="products-item" bindtap="onProductsItemTap" data-id="{{item.id}}" data-type='1'>
                 <image class="products-image" src="{{item.main_img_url}}" mode="aspectFill"></image>
                 <view class="products-item-bottom">
                     <text class="name">{{item.name}}</text>
