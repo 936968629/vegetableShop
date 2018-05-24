@@ -134,6 +134,7 @@ Page({
   tfunc:function(){
     var tiArr = {};
     var ntim = new Date(); //当前时间戳 
+    // var ntim = this.data.orderArr[0]['now_time'];
     for (let i in this.data.orderArr){
       let timstr;
       var currentData = this.data.orderArr[i];
