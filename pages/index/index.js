@@ -124,7 +124,7 @@ Page({
   // },
   onReady:function(){
     wx.setNavigationBarTitle({
-      title: 'aa',
+      title: '商城',
     });
   }
 })
