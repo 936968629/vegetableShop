@@ -64,6 +64,18 @@ class Base{
     });
   }
 
+  //modal
+  myModal(title,content,succcall){
+    wx.showModal({
+      title: title,
+      content: content,
+      showCancel: false,
+      success: function (res) {
+        succcall && succcall(res)
+      }
+    })
+  }
+
 }
 
 export {Base}
