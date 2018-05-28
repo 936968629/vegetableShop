@@ -27,11 +27,16 @@ class Token {
             'content-type': 'application/json',
           },
           success: function (res) {
-            //console.log("token:" + res.data.token);
+            // console.log("token:" + res.data.token);
             wx.setStorageSync('token', res.data.token);
             callback && callback(res.data.token);
-          },
-
+          }
+        })
+      },
+      fail:function(mess){
+        wx.showModal({
+          title: '提示',
+          content: mess.errMsg.toString(),//提示信息,
         })
       }
     });

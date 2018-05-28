@@ -3,6 +3,7 @@ import {My} from './myModel.js';
 import {Address} from '../../utils/address.js';
 var my = new My();
 var address = new Address();
+var app = getApp();
 Page({
 
   /**
@@ -26,7 +27,7 @@ Page({
   },
   _loadData:function(){
     my.getUserInfo( (data)=>{
-      console.log(data)
+      // console.log(data)
       var mysign = false
       if ( !data.hasOwnProperty('sign') ){
         mysign = true

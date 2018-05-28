@@ -15,15 +15,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.getUserInfo({
-      success: res => {
-        app.globalData.userInfo = res.userInfo
-        // this.setData({
-        //   userInfo: res.userInfo,
-        //   hasUserInfo: true
-        // })
-      }
-    })
+    // wx.getUserInfo({
+    //   success: res => {
+    //     console.log(res)
+    //     app.globalData.userInfo = res.userInfo
+    //   },
+    //   fail:function(mes){
+    //     console.log(mes)
+    //   }
+    // })
     this._loadData();
     this._loadHotProduct();
     this._loadNewProduct();
@@ -57,7 +57,7 @@ Page({
   //加载最新商品
   _loadNewProduct:function(){
     index.getNewData((res)=>{
-      console.log(res);
+      // console.log(res);
       this.setData({
         'newData':res
       });
@@ -113,18 +113,14 @@ Page({
   // onPullDownRefresh:function(){
   //   // wx.stopPullDownRefresh();
   //   wx.showToast({
-
   //     title: '没事儿别乱拉',//提示信息
-
   //     icon: 'success',//成功显示图标
-
   //     duration: 1000//时间
-
   //   })
   // },
   onReady:function(){
     wx.setNavigationBarTitle({
-      title: '商城',
+      title: '蔬菜商城',
     });
   }
 })
