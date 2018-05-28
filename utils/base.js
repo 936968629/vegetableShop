@@ -2,7 +2,9 @@
 import {Token} from "./token.js";
 class Base{
   constructor(){
+    //线上环境
     this.baseRequestUrl = "https://www.wenjunlin.xyz/api/v1/";
+    //本地环境
     // this.baseRequestUrl = "http://bisheapi.cn/api/v1/";
   }
   //flag 为true不做未授权重置
