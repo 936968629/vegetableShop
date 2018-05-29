@@ -32,9 +32,12 @@ Page({
 
   _show: function () {
     var cartData = cart.getCartDataFromLocal();
+    cart.verify(cartData,(data)=>{
+
+    });
     // var countsInfo = cart.getCartTotalCounts(true);
     var cal = this._calcTotalAccountAndCounts(cartData);
-    console.log
+    console.log(cal);
     this.setData({
       'selectedCount': cal.selectedCounts,
       'cartData': cartData,

@@ -106,5 +106,17 @@ class Cart extends Base{
     }
     wx.setStorageSync(this._storageKeyName, cartData);
   }
+  //检测购物车数据是否最新
+  verify(cartData,callback){
+    var params = {
+      url: "order/verify",
+      type:'POST',
+      data:{cartData:cartData},
+      sCallback: function (res) {
+        callback && callback(res);
+      },
+      
+    }
+  }
 }
 export {Cart}
