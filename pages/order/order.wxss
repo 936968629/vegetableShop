@@ -130,7 +130,8 @@
 }
 .pay{
     flex-basis: 240rpx;
-    background-color: #AB956D;
+    /* background-color: #AB956D; */
+    background-color:#789262; 
     color: #fff;
     justify-content: center;
 }

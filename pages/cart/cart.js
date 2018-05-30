@@ -33,17 +33,23 @@ Page({
   _show: function () {
     var cartData = cart.getCartDataFromLocal();
     cart.verify(cartData,(data)=>{
-
+      // console.log(data)
+      if (data.code == 1 && data.edit == true){
+        // console.log(data.data)
+        cartData = data.data;
+        cart.setstorage(cartData)
+      }
+      // var countsInfo = cart.getCartTotalCounts(true);
+      var cal = this._calcTotalAccountAndCounts(cartData);
+      console.log(cal);
+      this.setData({
+        'selectedCount': cal.selectedCounts,
+        'cartData': cartData,
+        'selectedTypeCounts': cal.selectedTypeCounts,
+        'account': cal.account
+      });
     });
-    // var countsInfo = cart.getCartTotalCounts(true);
-    var cal = this._calcTotalAccountAndCounts(cartData);
-    console.log(cal);
-    this.setData({
-      'selectedCount': cal.selectedCounts,
-      'cartData': cartData,
-      'selectedTypeCounts': cal.selectedTypeCounts,
-      'account': cal.account
-    });
+    
   },
 
   //计算选中商品总价格

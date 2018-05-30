@@ -103,7 +103,8 @@
 
 /*合计*/
 .all-accounts-box{
-    background-color:#AB956D;
+    /* background-color:#AB956D; */
+    background-color: #a88462;
     color: #fff;
 }
 .all-accounts-box>view{

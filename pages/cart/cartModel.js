@@ -114,9 +114,13 @@ class Cart extends Base{
       data:{cartData:cartData},
       sCallback: function (res) {
         callback && callback(res);
-      },
-      
+      }, 
     }
+    this.request(params)
+  }
+  //保存到缓存
+  setstorage(cartData){
+    wx.setStorageSync(this._storageKeyName, cartData);
   }
 }
 export {Cart}
