@@ -21,7 +21,8 @@
   </view>
 
   <!--地址-->
-  <view class="order-address-info {{orderStatus!=0?'disabled':''}}" bindtap="editAddress">
+  <view class="order-address-info {{addressChange}}"
+    bindtap="editAddress">   
     <block wx:if="{{addressInfo}}">
       <view class="contact-box">
         <view>

@@ -12,6 +12,7 @@ Page({
    */
   data: {
     id:null,
+    addressChange:'',
   },
 
   /**
@@ -58,6 +59,10 @@ Page({
       //下单后，支付成功或者失败后，点左上角返回时能够更新订单状态 所以放在onshow中
       // var id = this.data.id;
       order.getOrderInfoById(id, (data) => {
+        var addressChange = 'disabled';
+        if(data.status == 0 || data.status == 1){
+          addressChange = '';
+        }
         that.setData({
           orderStatus: data.status,
           productsArr: data.snap_items,
@@ -66,6 +71,7 @@ Page({
             orderTime: data.create_time,
             orderNo: data.order_no
           },
+          addressChange:addressChange,
         });
 
         // 快照地址
