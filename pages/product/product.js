@@ -32,7 +32,7 @@ Page({
 
   _loadData:function(id){
     product.getDetailInfo(id,(res)=>{
-      console.log(res);
+      // console.log(res);
       this.setData({
         'product':res
       });

@@ -136,7 +136,7 @@ Page({
     //支付分两步，第一步是生成订单号，然后根据订单号支付
     order.doOrder(orderInfo, (data) => {
       //订单生成成功
-      if (data.pass && !data.hasOwnProperty('pro_status') ) {
+      if (data.pass && data.pro_status ) {
         //更新订单状态
         var id = data.order_id;
         that.data.id = id;
@@ -144,8 +144,8 @@ Page({
         //开始支付
         that._execPay(id);
       } else {
-        if ( data.hasOwnProperty('pro_status') ){
-          this.showTips('下单失败',data.name_status+'商品已下架');
+        if ( !data.pro_status ){
+          this.showTips('下单失败','部分商品已下架');
         }else{
           that._orderFail(data);  // 下单失败 库存不足
         }
@@ -160,6 +160,7 @@ Page({
   _execPay: function (id) {
     var that = this;
     order.execPay(id, (statusCode) => {
+      // console.log(statusCode)
       if (statusCode != 0) {
         //将已经下单的商品从购物车删除
         that.deleteProducts();
@@ -168,6 +169,8 @@ Page({
           url: '../pay-result/pay-result?id=' + id
           + '&flag=' + flag + '&from=order'
         });
+      }else{
+        this.showTips('下单失败', '商品已下架或者库存不足');
       }
     });
   },

@@ -38,6 +38,7 @@ class Order extends Base{
       type: 'post',
       data: { id: orderNumber },
       sCallback: function (data) {
+        // console.log(data)
         var timeStamp = data.timeStamp;
         if (timeStamp) { //可以支付
           wx.requestPayment({//支付API
