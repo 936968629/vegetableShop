@@ -23,8 +23,7 @@
         </picker>
       </view>
       <view class="middle-border"></view>
-      <view class="add-cart-btn {{product.stock==0?'disabled':''}}" 
-      bindtap="onAddingToCard">
+      <view class="add-cart-btn {{product.stock==0?'disabled':''}} {{product.status==0?'disabled':''}}" bindtap="onAddingToCard">
       <view class="good_box" hidden="{{hide_good_box}}" style="left: {{bus_x}}px; top: {{bus_y}}px;position:fixed">
     <view style='width:16rpx;height:23rpx;border-radius:50%;background-color:#a1a46d'></view>
   </view>
@@ -33,7 +32,8 @@
       </view>
     </view>
     <view class="basic-info-box">
-      <view class="stock" wx:if="{{product.stock>0}}"></view>
+      <view class="stock" wx:if="{{product.stock>0 && product.status==1}}"></view>
+      <view class="stock no" wx:elif="{{product.status==0}}">商品已下架</view>
       <view class="stock no" wx:else>缺货</view>
       <view class="name">{{product.name}}</view>
       <view class="price">${{product.price}}</view>
