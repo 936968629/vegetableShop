@@ -102,7 +102,8 @@ Page({
         return item;
       }
     }
-  },//更改购物车数量
+  },
+  //更改购物车数量
   changeCounts: function (event) {
     var id = cart.getDataSet(event, 'id');
     var ctype = cart.getDataSet(event, 'type');
