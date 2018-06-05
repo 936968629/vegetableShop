@@ -135,6 +135,7 @@ Page({
     var that = this;
     //支付分两步，第一步是生成订单号，然后根据订单号支付
     order.doOrder(orderInfo, (data) => {
+      console.log(data)
       //订单生成成功
       if (data.pass && data.pro_status ) {
         //更新订单状态
