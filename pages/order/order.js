@@ -59,6 +59,7 @@ Page({
       //下单后，支付成功或者失败后，点左上角返回时能够更新订单状态 所以放在onshow中
       // var id = this.data.id;
       order.getOrderInfoById(id, (data) => {
+        console.log(data)
         var addressChange = 'disabled';
         if(data.status == 0 || data.status == 1){
           addressChange = '';
@@ -135,7 +136,7 @@ Page({
     var that = this;
     //支付分两步，第一步是生成订单号，然后根据订单号支付
     order.doOrder(orderInfo, (data) => {
-      console.log(data)
+      // console.log(data)
       //订单生成成功
       if (data.pass && data.pro_status ) {
         //更新订单状态
@@ -184,7 +185,8 @@ Page({
   },
   //将已经下单的商品从购物车删除
   deleteProducts: function () {
-    var ids = [], arr = this.data.productsArr;
+    var ids = [];
+    var arr = this.data.productsArr;
     for (let i = 0; i < arr.length; i++) {
       ids.push(arr[i].id);
     }

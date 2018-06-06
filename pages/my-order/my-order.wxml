@@ -35,7 +35,7 @@
       </view>
     </block>
     <block wx:if="{{nodata}}">
-    <view class='show'>没有多余的商品了</view>
+    <view class='show'>没有多余的数据了</view>
     </block>
   </view>
 

@@ -100,10 +100,20 @@ class Cart extends Base{
   //删除
   delete(id) {
     var cartData = this.getCartDataFromLocal();
-    var hasInfo = this._isHasThaOne(id, cartData);
-    if (hasInfo.index != -1) {
-      cartData.splice(hasInfo.index, 1);
+    if (id instanceof Array){
+      for(let i in id){
+        var hasInfo = this._isHasThaOne(id[i], cartData);
+        if (hasInfo.index != -1) {
+          cartData.splice(hasInfo.index, 1);
+        }
+      }
+    }else{
+      var hasInfo = this._isHasThaOne(id, cartData);
+      if (hasInfo.index != -1) {
+        cartData.splice(hasInfo.index, 1);
+      }
     }
+   
     wx.setStorageSync(this._storageKeyName, cartData);
   }
   //检测购物车数据是否最新

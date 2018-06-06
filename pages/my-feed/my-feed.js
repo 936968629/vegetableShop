@@ -57,7 +57,7 @@ Page({
         } else {
           wx.showModal({
             title: '提示',
-            content: '反馈失败',
+            content: data.mess,
             showCancel: false,
             duration: 2000
           })
